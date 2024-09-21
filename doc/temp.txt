@@ -9,3 +9,10 @@ todo:
 
 old code:
 
+<p class="mt-6 text-lg leading-8 text-gray-600">
+            Genießen sie Ihre Ferien am Deich, mal fernab von allem Trubel und
+            ohne Nachbarn. Entspannen Sin in unserem Großzügigen und
+            barrierefreien Ferienhaus in einmaliger Alleinlage mit
+            Topausstattung. Vom Deutschen Tourismus mit 5 Sternen ausgezeichnet.
+            Strand nur 2500 m entfernt.
+          </p>
