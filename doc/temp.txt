@@ -2,6 +2,10 @@ https://www.ferienwohnung-eiderstedt-nordsee.de/
 
 https://www.traum-ferienwohnungen.de/257216/
 
+zusaetzliche farben:
+Dunkles Blau: #223a55
+Helles Blau: #e5ecf0
+
 todo:
 - austauschbare bilder je nach bildschirmgroesse
 

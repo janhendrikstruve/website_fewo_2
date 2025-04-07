@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#F0ECE3]">
+  <div class="bg-[#FFF8F3]">
     <header class="absolute inset-x-0 top-0 z-50">
       <nav
         class="flex items-center justify-between p-6 lg:px-8"
@@ -8,7 +8,8 @@
         <div class="flex lg:flex-1">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
-            <img class="h-12 w-auto" src="../assets/moewe.svg" alt="" />
+            <!-- img class="h-20 w-auto" src="../assets/logo.jpg" alt="" -->
+            <!-- Kein Logo mehr -->
           </a>
         </div>
         <div class="flex lg:hidden">
@@ -18,7 +19,7 @@
             @click="mobileMenuOpen = true"
           >
             <span class="sr-only">Open main menu</span>
-            <Bars3Icon class="h-6 w-6" aria-hidden="true" />
+            <Bars3Icon class="h-8 w-8 text-white" aria-hidden="true" />
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
@@ -58,7 +59,7 @@
               @click="mobileMenuOpen = false"
             >
               <span class="sr-only">Close menu</span>
-              <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+              <XMarkIcon class="h-8 w-8" aria-hidden="true" />
             </button>
           </div>
           <div class="mt-6 flow-root">
@@ -68,7 +69,7 @@
                   v-for="item in navigation"
                   :key="item.name"
                   :href="item.href"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >{{ item.name }}</a
                 >
               </div>
@@ -77,47 +78,19 @@
         </DialogPanel>
       </Dialog>
     </header>
-
-    <div class="relative isolate px-6 pt-14 lg:px-8">
-      <div
-        class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-        aria-hidden="true"
-      >
-        <div
-          class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-          style="
-            clip-path: polygon(
-              74.1% 44.1%,
-              100% 61.6%,
-              97.5% 26.9%,
-              85.5% 0.1%,
-              80.7% 2%,
-              72.5% 32.5%,
-              60.2% 62.4%,
-              52.4% 68.1%,
-              47.5% 58.3%,
-              45.2% 34.5%,
-              27.5% 76.7%,
-              0.1% 64.9%,
-              17.9% 100%,
-              27.6% 76.8%,
-              76.1% 97.7%,
-              74.1% 44.1%
-            );
-          "
-        />
-      </div>
-      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-        <div class="text-center">
+    <!-- Hier faengt body an -->
+    <div class="relative isolate lg:px-8">
+      <div class="mx-auto max-w-2xl sm:py-48 lg:py-56">
+        <div class="relative text-center">
           <h1
-            class="text-4xl font-bold tracking-tight text-[#596E79] sm:text-6xl"
+            class="absolute top-[15vh] left-1/2 transform -translate-x-1/2 text-6xl font-bold tracking-tight text-[#ffffff] sm:text-6xl"
+            style="text-shadow: 4px 4px 6px black"
           >
-            Willkommen bei <br />
-            Opa Hans
+            Moin!
           </h1>
           <img
-            class="h-auto w-auto mt-8 rounded-xl"
-            src="../assets/ansicht_haus_hinten.jpg"
+            class="object-cover h-screen"
+            src="../assets/seehund.jpg"
             alt="Ansicht hinten"
           />
         </div>
@@ -202,7 +175,7 @@ import HomeView from "./HomeView.vue";
 const navigation = [
   { name: "Ferienhaus", href: "#" },
   { name: "Umgebung", href: "#" },
-  { name: "Prise und Buchung", href: "#" },
+  { name: "Preise und Buchung", href: "#" },
   { name: "Kontakt", href: "#" },
 ];
 
