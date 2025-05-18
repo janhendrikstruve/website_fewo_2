@@ -1,4 +1,5 @@
 <template>
+  <!-- <div class="bg-[#FFF8F3]"> -->
   <div class="bg-[#FFF8F3]">
     <header class="absolute inset-x-0 top-0 z-50">
       <nav
@@ -78,90 +79,16 @@
         </DialogPanel>
       </Dialog>
     </header>
-    <!-- Hier faengt body an -->
     <div class="relative isolate lg:px-8">
       <div class="mx-auto max-w-2xl sm:py-48 lg:py-56">
-        <div class="relative text-center">
-          <h1
-            class="absolute top-[15vh] left-1/2 transform -translate-x-1/2 text-6xl font-bold tracking-tight text-[#ffffff] sm:text-6xl"
-            style="text-shadow: 4px 4px 6px black"
-          >
-            Moin!
-          </h1>
-          <img
-            class="object-cover h-screen"
-            src="../assets/seehund.jpg"
-            alt="Ansicht hinten"
-          />
-        </div>
-        <!-- Abschnitt Bullet Points -->
-        <div
-          class="grid items-center max-w-4xl grid-cols-2 gap-4 mx-auto md:mt-20 md:grid-cols-4 mt-8"
-        >
-          <div
-            class="bg-white h-12 flex shadow-lg items-center justify-center col-span-2 border rounded-md"
-          >
-            ⭐ Fünf Sterne vom Tourismusverband
-          </div>
+        <LandingSection />
 
-          <div
-            class="bg-white h-12 flex shadow-lg items-center justify-center col-span-2 border rounded-md"
-          >
-            🌊 Badestelle nur 2,5 KM entfernt
-          </div>
-          <div
-            class="bg-white h-12 flex shadow-lg items-center justify-center border rounded-md"
-          >
-            🌸 Ferien am Deich
-          </div>
-
-          <div
-            class="bg-white h-12 flex shadow-lg items-center justify-center border rounded-md"
-          >
-            🌅 Alleinlage
-          </div>
-
-          <div
-            class="bg-white h-12 flex shadow-lg items-center justify-center border rounded-md"
-          >
-            Barrierefrei
-          </div>
-
-          <div
-            class="bg-white h-12 flex shadow-lg items-center justify-center border rounded-md"
-          >
-            ✨ Top Ausstattung
-          </div>
-        </div>
+        <WelcomeSection />
       </div>
       <div
         class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
         aria-hidden="true"
-      >
-        <div
-          class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-          style="
-            clip-path: polygon(
-              74.1% 44.1%,
-              100% 61.6%,
-              97.5% 26.9%,
-              85.5% 0.1%,
-              80.7% 2%,
-              72.5% 32.5%,
-              60.2% 62.4%,
-              52.4% 68.1%,
-              47.5% 58.3%,
-              45.2% 34.5%,
-              27.5% 76.7%,
-              0.1% 64.9%,
-              17.9% 100%,
-              27.6% 76.8%,
-              76.1% 97.7%,
-              74.1% 44.1%
-            );
-          "
-        />
-      </div>
+      ></div>
     </div>
   </div>
 </template>
@@ -171,6 +98,9 @@ import { ref } from "vue";
 import { Dialog, DialogPanel } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 import HomeView from "./HomeView.vue";
+import WelcomeSection from "@/components/WelcomeSection.vue";
+import LandingSection from "@/components/LandingSection.vue";
+import { Icon } from "@iconify/vue";
 
 const navigation = [
   { name: "Ferienhaus", href: "#" },
