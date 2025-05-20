@@ -84,6 +84,8 @@
         <LandingSection />
 
         <WelcomeSection />
+
+        <Pictures />
       </div>
       <div
         class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
@@ -100,6 +102,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 import HomeView from "./HomeView.vue";
 import WelcomeSection from "@/components/WelcomeSection.vue";
 import LandingSection from "@/components/LandingSection.vue";
+import Pictures from "@/components/Pictures.vue";
 import { Icon } from "@iconify/vue";
 
 const navigation = [

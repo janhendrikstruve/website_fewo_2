@@ -1,15 +1,13 @@
 <template>
   <!-- <hr class="shadow-xl border-0 h-2 bg-[#596E79]" /> -->
-  <section class="flex flex-col justify-center object-cover h-screen">
+  <section class="flex flex-col justify-center h-screen">
     <figure class="flex flex-col">
       <img
         class="mt-2 mx-2 shadow-xl"
         src="../assets/haus_hinten.jpg"
         alt="Ansicht hinten"
       />
-      <p
-        class="mt-4 mx-8 text-[1.2rem] tracking-tight text-[#405D72] sm:text-6xl"
-      >
+      <p class="mt-4 mx-8 text-[1.2rem] tracking-tight text-[#405D72]">
         Unser Ferienhaus bietet 200 qm barrierefreie Wohnfläche in ruhiger
         Alleinlage – ideal für einen entspannten, nachhaltigen Urlaub. Es wurde
         vom Tourismusverband mit fünf Sternen ausgezeichnet und liegt nur 2,5 km
@@ -17,7 +15,7 @@
       </p>
       <button
         type="button"
-        class="mt-4 self-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="mt-4 self-center text-white bg-[#405D72] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-8 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
         Erfahre mehr
         <svg
