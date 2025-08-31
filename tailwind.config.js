@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'oleo': ['Oleo Script', 'cursive'],
+        // Optional: Weitere Fonts hinzufügen
+        'inter': ['Inter', 'sans-serif'],
+      }
+    },
   },
   plugins: [],
 }

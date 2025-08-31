@@ -86,6 +86,13 @@
         <WelcomeSection />
 
         <Pictures />
+
+        <Standort />
+
+        <Colors/>
+
+
+
       </div>
       <div
         class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
@@ -104,6 +111,8 @@ import WelcomeSection from "@/components/WelcomeSection.vue";
 import LandingSection from "@/components/LandingSection.vue";
 import Pictures from "@/components/Pictures.vue";
 import { Icon } from "@iconify/vue";
+import Standort from "@/components/Standort.vue";
+import Colors from "@/components/Colors.vue";
 
 const navigation = [
   { name: "Ferienhaus", href: "#" },
