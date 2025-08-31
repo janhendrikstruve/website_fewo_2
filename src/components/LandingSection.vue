@@ -1,7 +1,7 @@
 <template>
   <section class="relative text-center">
     <h2
-      class="absolute top-[15vh] left-1/2 transform -translate-x-1/2 text-6xl font-bold tracking-tight text-[#ffffff] sm:text-6xl"
+      class="font-oleo absolute top-[15vh] left-1/2 transform -translate-x-1/2 text-8xl font-bold tracking-tight text-[#ffffff] sm:text-6xl"
       style="text-shadow: 4px 4px 6px black"
     >
       Moin!
