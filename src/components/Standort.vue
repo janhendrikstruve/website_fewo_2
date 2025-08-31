@@ -2,79 +2,60 @@
   <!-- <hr class="shadow-xl border-0 h-2 bg-[#596E79]" /> -->
   <section class="flex flex-col justify-center h-screen">
       <h2
-      class="text-center text-6xl font-bold tracking-tight text-[#456882] sm:text-6xl font-oleo mb-20"
+      class="text-center text-7xl font-bold text-[#456882] sm:text-6xl font-oleo"
     >
-      Hier findest du Uns
+      Hier findest <br> du Uns
     </h2>
+    
       <img
-        class=""
+        class="mt-10"
         src="../assets/map.jpg"
         alt="Ansicht hinten"
       />
-    <figure class="flex">
+      <p class="text-center mx-8 text-[1.2rem] tracking-tight text-[#405D72]">
+        Adresse: <br>
+        Klosterweg 2a,
+        25882 Tetenbüll
+      </p>
+      
+    <figure class="flex mt-4 bg-[#D2C1B6] pb-4">
+      <p class="mt-4 mx-4 text-[1.2rem] tracking-tight text-[#405D72]">
+        Maps Links:
+      </p>
       <button
         type="button"
-        class="mt-4 self-center text-white bg-[#405D72] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-8 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="py-1 pr-2 mx-2 mt-4 self-center text-white bg-[#456882] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl text-center inline-flex items-center "
       >
-        XXX
-        <svg
-          class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-        </svg>
+    <Icon
+      icon="material-icon-theme:gcp"
+      width="64"
+      class="text-white"
+    />
       </button>
       <button
         type="button"
-        class="mt-4 self-center text-white bg-[#405D72] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-8 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="py-1 pr-2 mx-2 mt-4 self-center text-white bg-[#456882] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl text-center inline-flex items-center "
       >
-        XXX
-        <svg
-          class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-        </svg>
+    <Icon
+      icon="material-icon-theme:applescript"
+      width="64"
+      class="text-white"
+    />
       </button>
       <button
         type="button"
-        class="mt-4 self-center text-white bg-[#405D72] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-8 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="py-1 pr-2 mx-2 mt-4 self-center text-white bg-[#456882] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl text-center inline-flex items-center "
       >
-        XXX
-        <svg
-          class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-        </svg>
+    <Icon
+      icon="material-icon-theme:android"
+      width="64"
+      class="text-white"
+    />
       </button>
     </figure>
   </section>
 </template>
+
+<script setup>
+import { Icon } from "@iconify/vue";
+</script>
