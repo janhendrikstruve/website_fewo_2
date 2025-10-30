@@ -1,18 +1,19 @@
 <template>
+  <div class="w-full h-4 bg-gradient-to-b from-[#FFF8F3] to-[#FFF1D5]"></div>
   <section
     class="flex flex-col items-center justify-center overflow-hidden relative h-screen bg-[#FFF1D5]"
   >
     
-    <h2 class="text-center text-4xl font-bold text-[#456882] sm:text-6xl font-oleo">Innen:</h2>
+    <h2 class="text-center text-[2.8rem] font-bold text-[#456882] sm:text-6xl font-oleo">Binnen</h2>
     
     <!-- Innen-Slider -->
-    <div class="w-full max-w-md mb-8">
+    <div class="p-2 w-full max-w-md mb-8">
       <ImageSlider :images="innenImages" />
     </div>
-    <h2 class="text-center text-4xl font-bold text-[#456882] sm:text-6xl font-oleo">Außen:</h2>
+    <h2 class="pt-2 text-center text-[2.8rem] font-bold text-[#456882] sm:text-6xl font-oleo">Budden</h2>
     
     <!-- Außen-Slider -->
-    <div class="w-full max-w-md">
+    <div class="p-2 w-full max-w-md">
       <ImageSlider :images="aussenImages" />
     </div>
   </section>

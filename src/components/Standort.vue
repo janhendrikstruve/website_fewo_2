@@ -1,5 +1,5 @@
 <template>
-  <!-- <hr class="shadow-xl border-0 h-2 bg-[#596E79]" /> -->
+  <div class="w-full h-4 bg-gradient-to-b from-[#FFF1D5] to-[#FFF8F3]"></div>
   <section class="flex flex-col justify-center h-screen">
       <h2
       class="text-center text-7xl font-bold text-[#456882] sm:text-6xl font-oleo"
@@ -12,35 +12,38 @@
         src="../assets/map.jpg"
         alt="Ansicht hinten"
       />
-      <p class="text-center mx-8 text-[1.2rem] tracking-tight text-[#405D72]">
-        Adresse: <br>
-        Klosterweg 2a,
+      <div class="mt-2 flex justify-center mx-4">
+      <Icon
+      icon="material-symbols:location-on-rounded"
+      width="64"
+      class="text-red-700 mt-2"
+    />
+      <p class="text-center mx-6 text-[1.6rem] tracking-tight text-[#405D72] ">
+        Klosterweg 2a, <br>
         25882 Tetenbüll
       </p>
+      </div>
       
-      <p class="mt-4 mx-4 text-[1.2rem] tracking-tight text-[#405D72] text-center">
-        Maps Links:
-      </p>
-    <figure class="flex pb-4 justify-center">
+    <figure class="flex pb-4 pt-8 justify-center">
       
       <button
         type="button"
-        class=""
+        class="flex justify-center items-center w-[7em] h-[7em] bg-[#FFF1D5] border-4 border-[#D2C1B6] rounded-full"
       >
     <Icon
-      icon="material-icon-theme:gcp"
-      width="64"
-      class="text-white"
+      icon="logos:google-maps"
+      width="48"
+      class=""
     />
       </button>
       <button
         type="button"
-        class=""
+        class="ml-4 flex justify-center items-center w-[7em] h-[7em] bg-[#FFF1D5] border-4 border-[#D2C1B6] rounded-full"
       >
     <Icon
-      icon="material-icon-theme:applescript"
+      icon="lineicons:apple-brand"
       width="64"
-      class="text-white"
+      class="text-[#1B3C53]"
     />
       </button>
       

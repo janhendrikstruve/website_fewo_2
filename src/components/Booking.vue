@@ -1,4 +1,6 @@
 <template>
+  <div class="w-full h-4 bg-gradient-to-b from-[#FFF8F3] to-[#FFF1D5]">
+</div>
   <section class="flex flex-col min-h-screen p-4 justify-center h-screen bg-[#FFF1D5]">
     <h2 class="mb-12 text-center text-6xl font-bold text-[#456882] sm:text-6xl font-oleo">Verfügbarkeit</h2>
     
@@ -13,23 +15,24 @@
           marginwidth="0" 
           allowtransparency="true" 
           scrolling="no"
-          class=""
+          class="border-4 border-[#D2C1B6] rounded"
           title="Verfügbarkeitskalender"
         />
     </div>
-    <div class="flex items-center justify-center p-12">
-<Icon icon="material-symbols:subdirectory-arrow-right" class="mr-2 text-gray-600" width="64" />
+    <div class="">
+
 <a 
 :href="`https://www.traum-ferienwohnungen.de/${listingId}/#kalender`"
 target="_blank"
 rel="noopener noreferrer"
-class="inline-block"
+class="flex items-center justify-center m-10 bg-[#dff9ff] border-4 border-[#D2C1B6] rounded"
 >
+<Icon icon="material-symbols:subdirectory-arrow-right" class="mr-2 text-gray-600" width="32" />
 <img 
 src="https://static.traum-ferienwohnungen.de/images/vermieten/tfw-logo.png"
 alt="Traum-Ferienwohnungen.de"
 width="200"
-class="px-4 py-2 mt-1.5 bg-[#dff9ff] border-4 border-[#D2C1B6] rounded"
+class="px-4 py-2 mt-1.5 "
 />
 </a>
 </div>

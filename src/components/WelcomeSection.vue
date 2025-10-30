@@ -4,7 +4,7 @@
     <h2
       class="mb-8 text-center text-7xl font-bold text-[#456882] sm:text-6xl font-oleo"
     >
-      Opa Hans
+      Ferienhaus <br> Opa Hans
     </h2>
     <figure class="flex flex-col">
       <img
@@ -14,31 +14,27 @@
       />
       <p class="mt-4 mx-8 text-[1.2rem] tracking-tight text-[#405D72]">
         Unser Ferienhaus bietet 200 qm barrierefreie Wohnfläche in ruhiger
-        Alleinlage – ideal für einen entspannten, nachhaltigen Urlaub. Es wurde
-        vom Tourismusverband mit fünf Sternen ausgezeichnet und liegt nur 2,5 km
+        Alleinlage – ideal für einen entspannten, nachhaltigen Urlaub. Es liegt nur 2,5 km
         von einer idyllischen Badestelle entfernt.
       </p>
-      <button
-        type="button"
-        class="mt-4 self-center text-white bg-[#405D72] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-8 py-2.5 text-center inline-flex items-center"
-      >
-        Erfahre mehr
-        <svg
-          class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-        </svg>
-      </button>
+      <a 
+:href="`https://www.traum-ferienwohnungen.de/${listingId}/#kalender`"
+target="_blank"
+rel="noopener noreferrer"
+class="flex items-center justify-center m-10 bg-[#dff9ff] border-4 border-[#D2C1B6] rounded"
+>
+<Icon icon="material-symbols:subdirectory-arrow-right" class="mr-2 text-gray-600" width="32" />
+<img 
+src="https://static.traum-ferienwohnungen.de/images/vermieten/tfw-logo.png"
+alt="Traum-Ferienwohnungen.de"
+width="200"
+class="px-4 py-2 mt-1.5 "
+/>
+</a>
     </figure>
   </section>
 </template>
+
+<script setup>
+import { Icon } from "@iconify/vue";
+</script>
