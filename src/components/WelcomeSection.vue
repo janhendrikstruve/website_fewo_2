@@ -1,6 +1,11 @@
 <template>
   <!-- <hr class="shadow-xl border-0 h-2 bg-[#596E79]" /> -->
   <section class="flex flex-col justify-center h-screen">
+    <h2
+      class="mb-8 text-center text-7xl font-bold text-[#456882] sm:text-6xl font-oleo"
+    >
+      Opa Hans
+    </h2>
     <figure class="flex flex-col">
       <img
         class="mt-2 mx-2 shadow-xl"

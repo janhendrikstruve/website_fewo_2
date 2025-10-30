@@ -89,6 +89,8 @@
 
         <Standort />
 
+        <Booking/>
+
         <Colors/>
 
 
@@ -113,6 +115,7 @@ import Pictures from "@/components/Pictures.vue";
 import { Icon } from "@iconify/vue";
 import Standort from "@/components/Standort.vue";
 import Colors from "@/components/Colors.vue";
+import Booking from "@/components/Booking.vue";
 
 const navigation = [
   { name: "Ferienhaus", href: "#" },

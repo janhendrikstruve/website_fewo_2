@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prettier Test Datei</title>
+<style>body{margin:0;padding:0;font-family:Arial,sans-serif;}
+.container{max-width:1200px;margin:0 auto;padding:20px;}
+h1{color:#333;font-size:2em;}
+.button{background-color:#007bff;color:white;padding:10px 20px;border:none;cursor:pointer;}
+.button:hover{background-color:#0056b3;}</style>
+</head>
+<body>
+<div class="container">
+<h1>Willkommen zur Prettier Test Seite</h1>
+        <p>Dies ist ein Absatz mit sehr schlechter Formatierung. Er hat keine konsistenten Einrückungen und die Zeilen sind viel zu lang für eine gute Lesbarkeit im Code.</p>
+<div class="content"><ul><li>Listenelement 1</li><li>Listenelement 2</li>
+    <li>Listenelement 3</li></ul>
+</div>
+    <button class="button" onclick="alert('Button geklickt!')">Klick mich</button>
+<script>
+function greet(name){console.log("Hallo, "+name+"!");}
+const users=[{id:1,name:"Max",age:25},{id:2,name:"Anna",age:30},{id:3,name:"Peter",age:28}];
+users.forEach(user=>{if(user.age>26){console.log(user.name+" ist älter als 26");}else{console.log(user.name+" ist 26 oder jünger");}});
+document.addEventListener('DOMContentLoaded',function(){greet('Benutzer');});
+</script>
+</div>
+</body></html>

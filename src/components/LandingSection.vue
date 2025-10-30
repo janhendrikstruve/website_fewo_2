@@ -9,7 +9,7 @@
     <Icon
       icon="icon-park-twotone:arrow-circle-down"
       width="64"
-      class="absolute top-[85vh] left-1/2 z-10 text-[#405D72]"
+      class="absolute top-[85vh] left-1/2 z-10 text-[#000000] border-1 border-black"
       style="animation: bounceX 2s infinite ease-in-out"
     />
     <img
