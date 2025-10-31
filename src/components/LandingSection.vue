@@ -1,7 +1,8 @@
 <template>
   <section class="relative text-center">
     <h2
-      class="font-oleo absolute top-[15vh] left-1/2 transform -translate-x-1/2 text-8xl font-bold tracking-tight text-[#ffffff] sm:text-6xl"
+      ref="h2Element"
+      class="font-berk absolute top-[15vh] left-1/2 transform -translate-x-1/2 text-8xl tracking-tight text-[#ffffff] sm:text-6xl"
       style="text-shadow: 4px 4px 6px black"
     >
       Moin!
@@ -26,6 +27,16 @@
 
 <script setup>
 import { Icon } from "@iconify/vue";
+import { onMounted, ref } from 'vue'
+
+const h2Element = ref(null)
+
+onMounted(() => {
+  if (h2Element.value) {
+    const computedStyle = window.getComputedStyle(h2Element.value)
+    console.log('H2 Schriftart:', computedStyle.fontFamily)
+  }
+})
 </script>
 
 <style>
@@ -39,3 +50,4 @@ import { Icon } from "@iconify/vue";
   }
 }
 </style>
+

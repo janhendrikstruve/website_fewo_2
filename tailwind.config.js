@@ -10,6 +10,9 @@ export default {
         'oleo': ['Oleo Script', 'cursive'],
         // Optional: Weitere Fonts hinzufügen
         'inter': ['Inter', 'sans-serif'],
+        'quin': ['Quintessential', 'cursive'],
+        'berk': ['Berkshire Swash', 'cursive']
+
       }
     },
   },

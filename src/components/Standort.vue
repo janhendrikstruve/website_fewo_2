@@ -2,7 +2,7 @@
   <div class="w-full h-4 bg-gradient-to-b from-[#FFF1D5] to-[#FFF8F3]"></div>
   <section class="flex flex-col justify-center h-screen">
       <h2
-      class="text-center text-7xl font-bold text-[#456882] sm:text-6xl font-oleo"
+      class="text-center text-6xl text-[#456882] font-berk"
     >
       Hier findest <br> du Uns
     </h2>

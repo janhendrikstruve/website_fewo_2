@@ -11,6 +11,8 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@fontsource/berkshire-swash": "^5.2.8",
+    "@fontsource/quintessential": "^5.2.8",
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.1.5",
     "vue": "^3.4.29",
