@@ -20,7 +20,8 @@
             @click="mobileMenuOpen = true"
           >
             <span class="sr-only">Open main menu</span>
-            <Bars3Icon class="h-8 w-8 text-white" aria-hidden="true" />
+            <!-- <Bars3Icon class="h-8 w-8 text-white" aria-hidden="true" /> -->
+            <Icon icon="fontisto:nav-icon-a" class="text-[#ffffff] shadow-2xl shadow-black" width='32'/>
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">

@@ -27,16 +27,6 @@
 
 <script setup>
 import { Icon } from "@iconify/vue";
-import { onMounted, ref } from 'vue'
-
-const h2Element = ref(null)
-
-onMounted(() => {
-  if (h2Element.value) {
-    const computedStyle = window.getComputedStyle(h2Element.value)
-    console.log('H2 Schriftart:', computedStyle.fontFamily)
-  }
-})
 </script>
 
 <style>
