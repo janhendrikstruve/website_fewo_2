@@ -81,7 +81,7 @@
       </Dialog>
     </header>
     <div class="relative isolate lg:px-8">
-      <div class="mx-auto max-w-2xl sm:py-48 lg:py-56 min-[1200px]:grid min-[1200px]:grid-cols-2">
+      <div class="mx-auto sm:py-48 lg:py-56 min-[1200px]:grid min-[1200px]:grid-cols-2">
         <LandingSection />
 
         <WelcomeSection />

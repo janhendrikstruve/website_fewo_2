@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-4 bg-gradient-to-b from-[#FFF8F3] to-[#FFF1D5]"></div>
+  <div class="w-full h-4 bg-gradient-to-b from-[#FFF8F3] to-[#FFF1D5] min-[1200px]:hidden"></div>
   <section
     class="flex flex-col items-center justify-center overflow-hidden relative h-screen bg-[#FFF1D5]"
   >
