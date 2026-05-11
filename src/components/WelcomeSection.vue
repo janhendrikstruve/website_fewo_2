@@ -4,7 +4,7 @@
     <h2
       class="mb-8 text-center text-6xl text-[#456882] sm:text-5xl font-berk font-extralight"
     >
-      Ferienhaus <br> Opa Hans
+      Ferienhaus <br class="lg:hidden"> Opa Hans
     </h2>
     <figure class="flex flex-col">
       <img
