@@ -1,5 +1,5 @@
 <template>
-  <section class="relative text-center">
+  <section class="relative text-center lg:hidden">
     <h2
       ref="h2Element"
       class="font-berk absolute top-[15vh] left-1/2 transform -translate-x-1/2 text-8xl tracking-tight text-[#ffffff] sm:text-6xl"
