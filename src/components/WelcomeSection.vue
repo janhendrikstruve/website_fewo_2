@@ -1,5 +1,4 @@
 <template>
-  <!-- <hr class="shadow-xl border-0 h-2 bg-[#596E79]" /> -->
   <section class="flex flex-col justify-center h-screen">
     <h2
       class="mb-8 text-center text-6xl text-[#456882] sm:text-5xl font-berk font-extralight"

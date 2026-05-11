@@ -86,7 +86,7 @@
 
         <Booking class="col-span-2 col-start-5"/>
 
-        <Standort />
+        <Standort class="col-span-2 col-start-1"/>
 
         <Pictures />
 

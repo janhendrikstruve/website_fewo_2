@@ -1,6 +1,5 @@
 <template>
-  <div class="w-full h-4 bg-gradient-to-b from-[#FFF8F3] to-[#FFF1D5] min-[1200px]:hidden">
-</div>
+
   <section class="flex flex-col min-h-screen p-4 justify-center h-screen bg-[#FFF1D5]">
     <h2 class="mb-12 text-center text-5xl font-bold text-[#456882] sm:text-6xl font-berk">Verfügbarkeit</h2>
     
