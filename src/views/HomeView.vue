@@ -80,8 +80,20 @@
         </DialogPanel>
       </Dialog>
     </header>
-    <div class="relative isolate lg:px-8">
-      <div class="mx-auto sm:py-48 lg:py-56 min-[1200px]:grid min-[1200px]:grid-cols-2">
+    <div class="relative isolate">
+      <div class="mx-auto grid grid-cols-7 max-lg:hidden">
+        <WelcomeSection class="col-span-2 col-start-2"/>
+
+        <Booking class="col-span-2 col-start-5"/>
+
+        <Standort />
+
+        <Pictures />
+
+        <Colors/>
+
+      </div>
+      <div class="mx-auto sm:py-48 lg:hidden">
         <LandingSection />
 
         <WelcomeSection />
@@ -89,6 +101,8 @@
         <Pictures />
 
         <Standort />
+
+        <div class="w-full h-4 bg-gradient-to-b from-[#FFF8F3] to-[#FFF1D5] min-[1200px]:hidden"></div>
 
         <Booking/>
 
