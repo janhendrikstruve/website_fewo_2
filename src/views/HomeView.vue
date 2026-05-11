@@ -3,7 +3,7 @@
   <div class="bg-[#FFF8F3]">
     <header class="absolute inset-x-0 top-0 z-50">
       <nav
-        class="flex items-center justify-between p-6 lg:px-8"
+        class="flex items-center justify-between p-6 lg:px-8 lg:bg-[#456882]"
         aria-label="Global"
       >
         <div class="flex lg:flex-1">
@@ -29,7 +29,7 @@
             v-for="item in navigation"
             :key="item.name"
             :href="item.href"
-            class="text-sm font-semibold leading-6 text-gray-900"
+            class="text-sm lg:text-lg font-semibold leading-6 text-gray-900 lg:text-[#F9F3EF]"
             >{{ item.name }}</a
           >
         </div>
@@ -119,7 +119,7 @@ import Colors from "@/components/Colors.vue";
 import Booking from "@/components/Booking.vue";
 
 const navigation = [
-  { name: "Ferienhaus", href: "#" },
+  { name: "Ferienhaus", href: "#"  },
   { name: "Umgebung", href: "#" },
   { name: "Preise und Buchung", href: "#" },
   { name: "Kontakt", href: "#" },
