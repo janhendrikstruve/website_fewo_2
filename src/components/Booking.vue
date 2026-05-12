@@ -1,7 +1,7 @@
 <template>
 
   <section class="flex flex-col min-h-screen p-4 justify-center h-screen bg-[#FFF1D5]">
-    <h2 class="mb-12 text-center text-5xl font-bold text-[#456882] sm:text-6xl font-berk">Verfügbarkeit</h2>
+    <h2 class="mb-12 text-center text-5xl text-[#456882] sm:text-6xl font-berk">Verfügbarkeit</h2>
     
     <!-- Traum-Ferienwohnungen Kalender Widget -->
     <div class="flex justify-center">
