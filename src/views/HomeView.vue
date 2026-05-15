@@ -85,35 +85,39 @@
       </Dialog>
     </header>
     <div class="relative isolate">
-      <div class="mx-auto grid grid-cols-7 max-lg:hidden">
-        <WelcomeSection class="col-span-2 col-start-2"/>
+      <div
+        class="mx-auto grid grid-cols-[0.25fr_2fr_1fr_1fr_0.5fr] max-lg:hidden"
+      >
+        <WelcomeSectionLg class="col-start-2" />
 
-        <Booking class="col-span-2 col-start-5"/>
+        <Booking class="col-start-4" />
 
-        <Standort class="col-span-2 col-start-1"/>
+        <Standort class="col-span-2 col-start-1 invisible" />
 
-        <Pictures />
+        <Pictures class="col-span-2 col-start-1" />
 
-        <Colors/>
-
+        <Colors />
       </div>
       <div class="mx-auto sm:py-48 lg:hidden">
         <LandingSection />
 
         <WelcomeSection />
 
+        <div
+          class="w-full h-4 bg-gradient-to-b from-[#FFF8F3] to-[#FFF1D5] min-[1200px]:hidden"
+        ></div>
+
         <Pictures />
 
         <Standort />
 
-        <div class="w-full h-4 bg-gradient-to-b from-[#FFF8F3] to-[#FFF1D5] min-[1200px]:hidden"></div>
+        <div
+          class="w-full h-4 bg-gradient-to-b from-[#FFF8F3] to-[#FFF1D5] min-[1200px]:hidden"
+        ></div>
 
-        <Booking/>
+        <Booking />
 
-        <Colors/>
-
-
-
+        <Colors />
       </div>
       <div
         class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
@@ -129,6 +133,7 @@ import { Dialog, DialogPanel } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 import HomeView from "./HomeView.vue";
 import WelcomeSection from "@/components/WelcomeSection.vue";
+import WelcomeSectionLg from "@/components/WelcomeSectionLg.vue";
 import LandingSection from "@/components/LandingSection.vue";
 import Pictures from "@/components/Pictures.vue";
 import { Icon } from "@iconify/vue";
@@ -137,7 +142,7 @@ import Colors from "@/components/Colors.vue";
 import Booking from "@/components/Booking.vue";
 
 const navigation = [
-  { name: "Ferienhaus", href: "#"  },
+  { name: "Ferienhaus", href: "#" },
   { name: "Umgebung", href: "#" },
   { name: "Preise und Buchung", href: "#" },
   { name: "Kontakt", href: "#" },
