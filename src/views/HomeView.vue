@@ -21,7 +21,11 @@
           >
             <span class="sr-only">Open main menu</span>
             <!-- <Bars3Icon class="h-8 w-8 text-white" aria-hidden="true" /> -->
-            <Icon icon="fontisto:nav-icon-a" class="text-[#ffffff] shadow-2xl shadow-black" width='32'/>
+            <Icon
+              icon="fontisto:nav-icon-a"
+              class="text-[#ffffff] shadow-2xl shadow-black"
+              width="32"
+            />
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
@@ -29,7 +33,7 @@
             v-for="item in navigation"
             :key="item.name"
             :href="item.href"
-            class="text-sm lg:text-lg font-semibold leading-6 text-gray-900 lg:text-[#F9F3EF]"
+            class="text-sm lg:text-2xl font-semibold leading-6 text-gray-900 lg:text-[#F9F3EF] font-berk lg:font-light"
             >{{ item.name }}</a
           >
         </div>
