@@ -92,11 +92,11 @@
 
         <Booking class="col-start-4" />
 
-        <Standort class="col-span-2 col-start-1 invisible" />
+        <div class="col-start-2 bg-[#FFF1D5]" />
 
-        <Pictures class="col-span-2 col-start-1" />
+        <Standort class="col-start-4" />
 
-        <Colors />
+        <Colors class="col-start-2" />
       </div>
       <div class="mx-auto sm:py-48 lg:hidden">
         <LandingSection />
@@ -143,8 +143,10 @@ import Booking from "@/components/Booking.vue";
 
 const navigation = [
   { name: "Ferienhaus", href: "#" },
-  { name: "Umgebung", href: "#" },
+  { name: "Verfügbarkeit", href: "#" },
+  { name: "Über uns", href: "#" },
   { name: "Preise und Buchung", href: "#" },
+  { name: "Standort", href: "#" },
   { name: "Kontakt", href: "#" },
 ];
 
