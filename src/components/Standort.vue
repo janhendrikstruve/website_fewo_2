@@ -1,51 +1,36 @@
 <template>
-  <section class="flex flex-col justify-center h-screen">
-      <h2
-      class="text-center text-6xl text-[#456882] font-berk"
-    >
-      Hier findest <br> du Uns
+  <section class="flex flex-col justify-center h-screen lg:bg-[#FFF1D5]">
+    <h2 class="text-center text-6xl text-[#456882] font-berk">
+      Hier findest <br />
+      du Uns
     </h2>
-    
-      <img
-        class="mt-10"
-        src="../assets/map.jpg"
-        alt="Ansicht hinten"
-      />
-      <div class="mt-2 flex justify-center mx-4">
+
+    <img class="mt-10" src="../assets/map.jpg" alt="Ansicht hinten" />
+    <div class="mt-2 flex justify-center mx-4">
       <Icon
-      icon="material-symbols:location-on-rounded"
-      width="64"
-      class="text-red-700 mt-2"
-    />
-      <p class="text-center mx-6 text-[1.6rem] tracking-tight text-[#405D72] ">
-        Klosterweg 2a, <br>
+        icon="material-symbols:location-on-rounded"
+        width="64"
+        class="text-red-700 mt-2"
+      />
+      <p class="text-center mx-6 text-[1.6rem] tracking-tight text-[#405D72]">
+        Klosterweg 2a, <br />
         25882 Tetenbüll
       </p>
-      </div>
-      
+    </div>
+
     <figure class="flex pb-4 pt-8 justify-center">
-      
       <button
         type="button"
         class="flex justify-center items-center w-[7em] h-[7em] bg-[#FFF1D5] border-4 border-[#D2C1B6] rounded-full"
       >
-    <Icon
-      icon="logos:google-maps"
-      width="48"
-      class=""
-    />
+        <Icon icon="logos:google-maps" width="48" class="" />
       </button>
       <button
         type="button"
         class="ml-4 flex justify-center items-center w-[7em] h-[7em] bg-[#FFF1D5] border-4 border-[#D2C1B6] rounded-full"
       >
-    <Icon
-      icon="lineicons:apple-brand"
-      width="64"
-      class="text-[#1B3C53]"
-    />
+        <Icon icon="lineicons:apple-brand" width="64" class="text-[#1B3C53]" />
       </button>
-      
     </figure>
   </section>
 </template>
