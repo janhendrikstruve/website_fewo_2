@@ -92,11 +92,11 @@
 
         <Booking class="col-start-4" />
 
-        <div class="col-start-2 bg-[#FFF1D5]" />
+        <About class="col-start-2" />
 
         <Standort class="col-start-4" />
 
-        <Colors class="col-start-2" />
+        <Impressum class="col-start-4" />
       </div>
       <div class="mx-auto sm:py-48 lg:hidden">
         <LandingSection />
@@ -116,8 +116,6 @@
         ></div>
 
         <Booking />
-
-        <Colors />
       </div>
       <div
         class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
@@ -140,6 +138,8 @@ import { Icon } from "@iconify/vue";
 import Standort from "@/components/Standort.vue";
 import Colors from "@/components/Colors.vue";
 import Booking from "@/components/Booking.vue";
+import About from "@/components/About.vue";
+import Impressum from "@/components/Impressum.vue";
 
 const navigation = [
   { name: "Ferienhaus", href: "#" },
@@ -147,7 +147,7 @@ const navigation = [
   { name: "Über uns", href: "#" },
   { name: "Preise und Buchung", href: "#" },
   { name: "Standort", href: "#" },
-  { name: "Kontakt", href: "#" },
+  { name: "Kontakt + Impressum", href: "#" },
 ];
 
 const mobileMenuOpen = ref(false);
