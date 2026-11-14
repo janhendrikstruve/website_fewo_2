@@ -3,6 +3,7 @@
   <div class="flex w-full flex-col items-center">
     <div
       class="group relative w-full overflow-hidden"
+      :class="frameClass"
       :style="{ aspectRatio }"
       @touchstart.passive="handleTouchStart"
       @touchmove.passive="handleTouchMove"
@@ -24,6 +25,17 @@
           draggable="false"
         />
       </div>
+
+      <!-- Bildunterschrift, falls das aktuelle Bild eine hat -->
+      <Transition name="caption" mode="out-in">
+        <p
+          v-if="images[currentIndex]?.caption"
+          :key="currentIndex"
+          class="pointer-events-none absolute bottom-3 left-3 rounded-full bg-[#1B3C53]/65 px-3 py-1 text-sm text-[#F9F3EF] backdrop-blur-sm"
+        >
+          {{ images[currentIndex].caption }}
+        </p>
+      </Transition>
 
       <!-- Pfeile (nur bei mehr als einem Bild) -->
       <template v-if="images.length > 1">
@@ -70,7 +82,7 @@ import { Icon } from "@iconify/vue";
 import ResponsivePicture from "./ResponsivePicture.vue";
 
 const props = defineProps({
-  // [{ picture: <Import mit ?picture>, alt: "…" }]
+  // [{ picture: <Import mit ?picture>, alt: "…", caption?: "…" }]
   images: {
     type: Array,
     required: true,
@@ -80,6 +92,11 @@ const props = defineProps({
   aspectRatio: {
     type: String,
     default: "3 / 2",
+  },
+  // Zusätzliche Klassen für den Bildbereich, z. B. Rahmen und Schatten
+  frameClass: {
+    type: [String, Array, Object],
+    default: "",
   },
   // Anzeigebreite für die Bildauswahl des Browsers (CSS-sizes-Syntax)
   sizes: {
@@ -127,3 +144,14 @@ function handleTouchEnd() {
   touchEndX.value = 0;
 }
 </script>
+
+<style scoped>
+.caption-enter-active,
+.caption-leave-active {
+  transition: opacity 0.2s ease;
+}
+.caption-enter-from,
+.caption-leave-to {
+  opacity: 0;
+}
+</style>

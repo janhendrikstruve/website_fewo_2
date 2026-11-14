@@ -10,7 +10,8 @@
         :picture="HausHintenImg"
         alt="Ansicht hinten"
         sizes="100vw"
-        img-class="mt-2 mx-2 shadow-xl"
+        picture-class="mt-2 mx-2 block shadow-xl"
+        img-class="w-full"
       />
       <p class="mt-4 mx-8 text-[1.2rem] tracking-tight text-[#405D72]">
         Unser Ferienhaus bietet 200 qm barrierefreie Wohnfläche in ruhiger

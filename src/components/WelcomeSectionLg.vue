@@ -1,26 +1,61 @@
+<!-- Desktop: Begrüßung mit Bildern und den wichtigsten Eckdaten -->
 <template>
-  <section class="flex flex-col justify-center min-h-screen bg-[#FFF1D5]">
-    <h2
-      class="mb-8 text-center text-6xl text-[#456882] sm:text-5xl font-berk font-extralight"
-    >
-      Ferienhaus <br class="lg:hidden" />
-      Opa Hans
-    </h2>
-    <figure class="flex flex-col">
+  <section class="px-8 pb-16 pt-14 xl:px-12">
+    <header v-reveal class="text-center">
+      <p class="eyebrow">Nordsee · Halbinsel Eiderstedt</p>
+      <h1
+        class="mt-3 text-balance text-5xl leading-tight text-[#456882] font-berk xl:text-6xl"
+      >
+        Ferienhaus Opa Hans
+      </h1>
+      <p
+        class="mx-auto mt-4 max-w-[30rem] text-balance text-lg italic text-[#405D72]"
+      >
+        Fernab von allem Trubel fängt der Urlaub schon an der Gartenpforte an.
+      </p>
+    </header>
+
+    <figure v-reveal class="mt-10">
       <ImageSlider
         :images="pictures"
-        sizes="(min-width: 1700px) 38vw, (min-width: 1024px) 42vw, 100vw"
+        sizes="(min-width: 1700px) 34vw, (min-width: 1280px) 45vw, 55vw"
+        frame-class="rounded border-4 border-[#D2C1B6] shadow-xl shadow-[#1B3C53]/15"
       />
-      <p class="mt-4 mx-8 text-[1.2rem] tracking-tight text-[#405D72]">
+      <figcaption
+        class="mx-auto mt-8 max-w-[38rem] text-center text-xl leading-relaxed text-[#405D72]"
+      >
         Unser Ferienhaus bietet 200 qm barrierefreie Wohnfläche in ruhiger
         Alleinlage – ideal für einen entspannten, nachhaltigen Urlaub. Es liegt
         nur 2,5 km von einer idyllischen Badestelle entfernt.
-      </p>
+      </figcaption>
     </figure>
+
+    <!-- Eckdaten, alle aus dem Text weiter unten -->
+    <ul
+      v-reveal
+      class="mx-auto mt-10 grid w-fit grid-cols-2 gap-x-10 gap-y-5 min-[1500px]:grid-cols-3"
+    >
+      <li
+        v-for="fakt in fakten"
+        :key="fakt.text"
+        class="flex items-center gap-3"
+      >
+        <span
+          class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-[#D2C1B6] bg-[#F9F3EF]"
+        >
+          <Icon :icon="fakt.icon" width="1.5rem" class="text-green-800" />
+        </span>
+        <span class="whitespace-nowrap leading-snug text-[#405D72]">
+          <strong class="block font-bold text-[#1B3C53]">{{ fakt.wert }}</strong>
+          {{ fakt.text }}
+        </span>
+      </li>
+    </ul>
   </section>
 </template>
 
 <script setup>
+import { Icon } from "@iconify/vue";
 import ImageSlider from "./ImageSlider.vue";
 
 // Beim Build in AVIF/WebP/JPEG und mehreren Breiten erzeugt (vite-imagetools)
@@ -29,8 +64,17 @@ import WohnzimmerImg from "../assets/wohnzimmer.jpg?picture";
 import SitzeckeImg from "../assets/sitzecke.jpg?picture";
 
 const pictures = [
-  { picture: HausHintenImg, alt: "Haus hinten" },
-  { picture: WohnzimmerImg, alt: "Wohnzimmer" },
-  { picture: SitzeckeImg, alt: "Sitzecke" },
+  { picture: HausHintenImg, alt: "Haus hinten", caption: "Blick vom Garten" },
+  { picture: WohnzimmerImg, alt: "Wohnzimmer", caption: "Wohnzimmer" },
+  { picture: SitzeckeImg, alt: "Sitzecke", caption: "Sitzecke" },
+];
+
+const fakten = [
+  { icon: "material-symbols:home-rounded", wert: "200 m²", text: "Wohnfläche" },
+  { icon: "material-symbols:bed-rounded", wert: "3 Schlafzimmer", text: "bis 7 Gäste" },
+  { icon: "material-symbols:shower-rounded", wert: "3 Bäder", text: "1 rollstuhlgerecht" },
+  { icon: "material-symbols:accessible-forward-rounded", wert: "Barrierefrei", text: "und ebenerdig" },
+  { icon: "material-symbols:beach-access-rounded", wert: "2,5 km", text: "zum Badestrand" },
+  { icon: "material-symbols:ev-station-rounded", wert: "WLAN", text: "& E-Ladestation" },
 ];
 </script>

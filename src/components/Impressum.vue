@@ -1,11 +1,15 @@
 <template>
-  <section
-    class="flex flex-col justify-center min-h-screen lg:bg-[#FFF1D5] px-4 py-16"
-  >
-    <h2 class="text-center text-6xl text-[#456882] font-berk">Impressum</h2>
+  <section class="flex flex-col px-4 pb-20 pt-14">
+    <p class="eyebrow text-center">Kontakt</p>
+    <h2
+      class="mt-3 text-center text-5xl text-[#456882] font-berk xl:text-6xl"
+    >
+      Impressum
+    </h2>
 
     <div
-      class="mx-auto mt-10 w-full max-w-md rounded border-4 border-[#D2C1B6] bg-[#FFF8F3] px-6 py-8 text-[#405D72] sm:px-8"
+      v-reveal
+      class="mx-auto mt-10 w-full max-w-md rounded border-4 border-[#D2C1B6] bg-[#FFF8F3] px-6 py-8 text-[#405D72] shadow-xl shadow-[#1B3C53]/10 sm:px-8"
     >
       <p class="text-center text-xs uppercase tracking-widest text-[#456882]">
         Angaben gemäß § 5 DDG

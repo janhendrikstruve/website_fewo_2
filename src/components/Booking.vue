@@ -1,9 +1,11 @@
 <template>
   <section
-    class="flex flex-col min-h-screen p-4 justify-center bg-[#FFF1D5]"
+    ref="sectionEl"
+    class="flex flex-col min-h-screen p-4 justify-center bg-[#FFF1D5] lg:min-h-0 lg:justify-start lg:bg-transparent lg:px-4 lg:pb-16 lg:pt-14"
   >
+    <p class="eyebrow text-center max-lg:hidden">Belegung</p>
     <h2
-      class="mb-12 text-center text-5xl text-[#456882] sm:text-6xl font-berk"
+      class="mb-12 text-center text-5xl text-[#456882] sm:text-6xl font-berk lg:mb-10 lg:mt-3 lg:text-5xl xl:text-6xl"
     >
       Verfügbarkeit
     </h2>
@@ -12,13 +14,13 @@
     <div v-if="configured && !error" class="flex flex-col items-center gap-4">
       <Calendar
         :attributes="attributes"
-        :columns="isMobile ? 1 : 2"
-        :rows="isMobile ? 4 : 2"
+        :columns="schmal ? 1 : 2"
+        :rows="schmal ? 4 : 2"
         :min-date="heute"
         locale="de"
         :first-day-of-week="2"
         borderless
-        class="belegung rounded border-4 border-[#D2C1B6] p-2"
+        class="belegung rounded border-4 border-[#D2C1B6] p-2 lg:shadow-xl lg:shadow-[#1B3C53]/10"
       />
       <div class="flex gap-6 text-[1rem] text-[#405D72]">
         <span class="flex items-center gap-2">
@@ -33,6 +35,20 @@
         </span>
       </div>
       <p v-if="loading" class="text-[#405D72]">Belegung wird geladen …</p>
+
+      <!-- Nur Desktop: Weg zur Anfrage -->
+      <div class="mt-6 flex flex-col items-center gap-4 text-center max-lg:hidden">
+        <p class="max-w-xs text-[#405D72]">
+          Ihr Wunschtermin ist frei? Dann melden Sie sich gern bei uns.
+        </p>
+        <a
+          href="#kontakt"
+          class="inline-flex items-center gap-2 rounded-full bg-[#456882] px-6 py-3 font-bold text-[#F9F3EF] shadow-md shadow-[#1B3C53]/20 transition duration-200 hover:-translate-y-0.5 hover:bg-[#1B3C53] hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1B3C53] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FFF1D5]"
+        >
+          <Icon icon="material-symbols:mail-rounded" width="1.25rem" />
+          Zum Kontakt
+        </a>
+      </div>
     </div>
 
     <!-- Platzhalter, solange keine Tabelle verknüpft ist oder Laden fehlschlägt -->
@@ -81,19 +97,27 @@ const attributes = computed(() =>
   }),
 );
 
-const isMobile = ref(false);
-function checkScreenSize() {
-  isMobile.value = window.innerWidth < 768;
+// Zwei Monate nebeneinander nur, wenn der Abschnitt breit genug ist
+// (2 × 15,625rem Monatsbreite plus Rahmen und Abstände ≈ 34,5rem).
+const sectionEl = ref(null);
+const schmal = ref(true);
+let beobachter = null;
+
+function pruefeBreite() {
+  if (!sectionEl.value) return;
+  const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+  schmal.value = sectionEl.value.clientWidth < 34.5 * rem;
 }
 
 onMounted(() => {
-  checkScreenSize();
-  window.addEventListener("resize", checkScreenSize);
+  pruefeBreite();
+  beobachter = new ResizeObserver(pruefeBreite);
+  beobachter.observe(sectionEl.value);
   laden();
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener("resize", checkScreenSize);
+  beobachter?.disconnect();
 });
 </script>
 
@@ -116,6 +140,12 @@ onBeforeUnmount(() => {
   --vc-text-lg: 1.125rem;
   --vc-text-xl: 1.25rem;
   --vc-text-2xl: 1.5rem;
+}
+
+/* Gleiche Schrift wie der Rest der Seite (höhere Spezifität als die
+   Bibliotheksregel .vc-container) */
+.belegung.vc-container {
+  font-family: inherit;
 }
 
 .belegung .vc-pane {

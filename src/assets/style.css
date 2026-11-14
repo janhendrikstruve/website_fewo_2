@@ -12,3 +12,44 @@
 html {
   font-size: clamp(100%, 0.5rem + 0.42vw, 125%);
 }
+
+/* Fließtext: Lato, lokal ausgeliefert – sieht damit auf jedem Gerät gleich
+   aus. Überschriften bleiben Berkshire Swash (Klasse font-berk). */
+body {
+  font-family: "Lato", ui-sans-serif, system-ui, sans-serif;
+  color: #405d72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: #e8b4a0;
+  color: #1b3c53;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Sanftes Einblenden beim Scrollen (Direktive v-reveal) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition:
+      opacity 0.7s ease-out,
+      transform 0.7s ease-out;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Kleine Zeile über einer Überschrift */
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #456882;
+}
