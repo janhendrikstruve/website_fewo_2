@@ -5,10 +5,11 @@
       du uns
     </h2>
 
-    <img
-      class="map-fade mt-6"
-      src="../assets/map.jpg"
-      alt="Standort Ferienhaus"
+    <ResponsivePicture
+      :picture="MapImg"
+      alt="Karte der Halbinsel Eiderstedt mit dem Standort des Ferienhauses"
+      sizes="(min-width: 1700px) 29vw, (min-width: 1024px) 40vw, 100vw"
+      img-class="map-fade mt-6"
     />
 
     <div class="mt-2 flex justify-center mx-4">
@@ -46,6 +47,8 @@
 
 <script setup>
 import { Icon } from "@iconify/vue";
+import ResponsivePicture from "./ResponsivePicture.vue";
+import MapImg from "../assets/map.jpg?picture";
 </script>
 
 <style scoped>

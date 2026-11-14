@@ -7,13 +7,13 @@
     
     <!-- Innen-Slider -->
     <div class="p-2 w-full max-w-md mb-8">
-      <ImageSlider :images="innenImages" />
+      <ImageSlider :images="innenImages" sizes="(min-width: 448px) 28rem, 100vw" />
     </div>
     <h2 class="pt-2 text-center text-[2.6rem] text-[#456882] font-berk">Draußen</h2>
     
     <!-- Außen-Slider -->
     <div class="p-2 w-full max-w-md">
-      <ImageSlider :images="aussenImages" />
+      <ImageSlider :images="aussenImages" sizes="(min-width: 448px) 28rem, 100vw" />
     </div>
   </section>
 </template>
@@ -22,18 +22,19 @@
 import ImageSlider from './ImageSlider.vue';
 
 // Bilder importieren
-import WohnzimmerImg from '../assets/wohnzimmer.jpg';
-import SitzeckeImg from '../assets/sitzecke.jpg';
-import VogelImg from '../assets/vogel.jpg';
+// Beim Build in AVIF/WebP/JPEG und mehreren Breiten erzeugt (vite-imagetools)
+import WohnzimmerImg from '../assets/wohnzimmer.jpg?picture';
+import SitzeckeImg from '../assets/sitzecke.jpg?picture';
+import VogelImg from '../assets/vogel.jpg?picture';
 
 // Innen-Bilder
 const innenImages = [
-  { src: WohnzimmerImg, alt: 'wohnzimmer' },
-  { src: SitzeckeImg, alt: 'Sitzecke' },
+  { picture: WohnzimmerImg, alt: 'Wohnzimmer' },
+  { picture: SitzeckeImg, alt: 'Sitzecke' },
 ];
 
 // Außen-Bilder
 const aussenImages = [
-  { src: VogelImg, alt: 'Vogel' },
+  { picture: VogelImg, alt: 'Vogel' },
 ];
 </script>

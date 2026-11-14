@@ -12,13 +12,15 @@
         class="flex h-full transition-transform duration-500 ease-in-out"
         :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
       >
-        <img
+        <ResponsivePicture
           v-for="(img, index) in images"
           :key="index"
-          :src="img.src"
+          :picture="img.picture"
           :alt="img.alt"
-          class="h-full w-full shrink-0 object-cover"
+          :sizes="sizes"
           :loading="index === 0 ? 'eager' : 'lazy'"
+          picture-class="block h-full w-full shrink-0"
+          img-class="h-full w-full object-cover"
           draggable="false"
         />
       </div>
@@ -65,8 +67,10 @@
 <script setup>
 import { ref } from "vue";
 import { Icon } from "@iconify/vue";
+import ResponsivePicture from "./ResponsivePicture.vue";
 
 const props = defineProps({
+  // [{ picture: <Import mit ?picture>, alt: "…" }]
   images: {
     type: Array,
     required: true,
@@ -76,6 +80,11 @@ const props = defineProps({
   aspectRatio: {
     type: String,
     default: "3 / 2",
+  },
+  // Anzeigebreite für die Bildauswahl des Browsers (CSS-sizes-Syntax)
+  sizes: {
+    type: String,
+    default: "100vw",
   },
 });
 

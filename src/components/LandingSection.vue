@@ -13,10 +13,14 @@
       class="absolute top-[85vh] left-1/2 z-10 text-[#1B3C53] border-1 border-black"
       style="animation: bounceX 2s infinite ease-in-out"
     />
-    <img
-      class="object-cover h-screen"
-      src="../assets/seehund.jpg"
-      alt="Ansicht hinten"
+    <!-- Erstes Bild der Seite: sofort laden. Hochformat 4:5, also so
+         breit wie 80 % der Fensterhöhe. -->
+    <ResponsivePicture
+      :picture="SeehundImg"
+      alt="Seehund"
+      sizes="80vh"
+      loading="eager"
+      img-class="object-cover h-screen"
     />
 
     <div
@@ -27,6 +31,8 @@
 
 <script setup>
 import { Icon } from "@iconify/vue";
+import ResponsivePicture from "./ResponsivePicture.vue";
+import SeehundImg from "../assets/seehund.jpg?picture";
 </script>
 
 <style>

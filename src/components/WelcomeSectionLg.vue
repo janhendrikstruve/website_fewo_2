@@ -7,7 +7,10 @@
       Opa Hans
     </h2>
     <figure class="flex flex-col">
-      <ImageSlider :images="pictures" />
+      <ImageSlider
+        :images="pictures"
+        sizes="(min-width: 1700px) 38vw, (min-width: 1024px) 42vw, 100vw"
+      />
       <p class="mt-4 mx-8 text-[1.2rem] tracking-tight text-[#405D72]">
         Unser Ferienhaus bietet 200 qm barrierefreie Wohnfläche in ruhiger
         Alleinlage – ideal für einen entspannten, nachhaltigen Urlaub. Es liegt
@@ -20,13 +23,14 @@
 <script setup>
 import ImageSlider from "./ImageSlider.vue";
 
-import HausHintenImg from "../assets/haus_hinten.jpg";
-import WohnzimmerImg from "../assets/wohnzimmer.jpg";
-import SitzeckeImg from "../assets/sitzecke.jpg";
+// Beim Build in AVIF/WebP/JPEG und mehreren Breiten erzeugt (vite-imagetools)
+import HausHintenImg from "../assets/haus_hinten.jpg?picture";
+import WohnzimmerImg from "../assets/wohnzimmer.jpg?picture";
+import SitzeckeImg from "../assets/sitzecke.jpg?picture";
 
 const pictures = [
-  { src: HausHintenImg, alt: "Haus hinten" },
-  { src: WohnzimmerImg, alt: "Wohnzimmer" },
-  { src: SitzeckeImg, alt: "Sitzecke" },
+  { picture: HausHintenImg, alt: "Haus hinten" },
+  { picture: WohnzimmerImg, alt: "Wohnzimmer" },
+  { picture: SitzeckeImg, alt: "Sitzecke" },
 ];
 </script>

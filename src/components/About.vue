@@ -7,10 +7,12 @@
         Moin!
       </h2>
       <div class="absolute -right-[6.25rem] -top-12 col-start-5 w-[13.75rem] h-[13.75rem] rounded-full border-4 border-[#D2C1B6] overflow-hidden">
-        <img
-          class="w-full h-full object-cover scale-150 rounded-full"
-          src="../assets/mama_papa.jpg"
-          alt="Standort Ferienhaus"
+        <!-- Kreis 13,75rem, Bild darin um 150 % vergrößert -->
+        <ResponsivePicture
+          :picture="MamaPapaImg"
+          alt="Susanne und Detlef Struve"
+          sizes="21rem"
+          img-class="w-full h-full object-cover scale-150 rounded-full"
         />
       </div>
     </div>
@@ -50,4 +52,7 @@
   </section>
 </template>
 
-<script></script>
+<script setup>
+import ResponsivePicture from "./ResponsivePicture.vue";
+import MamaPapaImg from "../assets/mama_papa.jpg?picture";
+</script>

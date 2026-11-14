@@ -85,8 +85,12 @@
       </Dialog>
     </header>
     <div class="relative isolate">
+      <!-- Nur das passende Layout wird eingebaut (nicht bloß per CSS
+           versteckt), sonst lädt der Browser Bilder, Kalender und
+           Belegungstabelle beider Layouts. -->
       <div
-        class="mx-auto grid grid-cols-[0.25fr_2fr_1fr_1fr_0.5fr] min-[1700px]:grid-cols-[4.74fr_37.9fr_19fr_29fr_9.5fr] max-lg:hidden"
+        v-if="isDesktop"
+        class="mx-auto grid grid-cols-[0.25fr_2fr_1fr_1fr_0.5fr] min-[1700px]:grid-cols-[4.74fr_37.9fr_19fr_29fr_9.5fr]"
       >
         <WelcomeSectionLg class="col-start-2" />
 
@@ -98,7 +102,7 @@
 
         <Impressum class="col-start-4" />
       </div>
-      <div class="mx-auto sm:py-48 lg:hidden">
+      <div v-else class="mx-auto sm:py-48">
         <LandingSection />
 
         <WelcomeSection />
@@ -126,7 +130,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onBeforeUnmount, ref } from "vue";
 import { Dialog, DialogPanel } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 import HomeView from "./HomeView.vue";
@@ -151,4 +155,13 @@ const navigation = [
 ];
 
 const mobileMenuOpen = ref(false);
+
+// Gleiche Grenze wie Tailwinds lg-Breakpoint (1024px)
+const desktopQuery = window.matchMedia("(min-width: 1024px)");
+const isDesktop = ref(desktopQuery.matches);
+const onLayoutChange = (e) => (isDesktop.value = e.matches);
+desktopQuery.addEventListener("change", onLayoutChange);
+onBeforeUnmount(() =>
+  desktopQuery.removeEventListener("change", onLayoutChange),
+);
 </script>

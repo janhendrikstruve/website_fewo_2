@@ -4,6 +4,23 @@ import { readFileSync } from "node:fs";
 import { defineConfig, loadEnv, type Plugin } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+import { imagetools } from "vite-imagetools";
+
+// Bilder: `import foto from "../assets/foto.jpg?picture"` erzeugt beim Build
+// AVIF, WebP und JPEG in allen Breiten unten – nie größer als das Original
+// (zu große Breiten kürzt vite-imagetools automatisch). Welche Datei geladen
+// wird, entscheidet der Browser anhand von `sizes` in <ResponsivePicture>.
+// Die Originale in src/assets bleiben unverändert.
+const BILD_BREITEN = "480;800;1200;1600;2000;2560";
+
+function bildVarianten(url: URL) {
+  if (!url.searchParams.has("picture")) return new URLSearchParams();
+  return new URLSearchParams({
+    w: BILD_BREITEN,
+    format: "avif;webp;jpg",
+    as: "picture",
+  });
+}
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -15,7 +32,7 @@ export default defineConfig(({ mode }) => {
   // derselbe Pfad ebenfalls auf die Freigabe zeigen.
   // Ohne BELEGUNG_QUELLE liefert der Dev-Server stattdessen mock/Belegung.xlsx.
   const proxy: Record<string, object> = {};
-  const plugins = [vue(), vueJsx()];
+  const plugins = [vue(), vueJsx(), imagetools({ defaultDirectives: bildVarianten })];
   if (env.BELEGUNG_QUELLE) {
     const quelle = new URL(env.BELEGUNG_QUELLE);
     proxy["/belegung-quelle"] = {

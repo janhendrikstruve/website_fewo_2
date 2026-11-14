@@ -6,10 +6,11 @@
       Ferienhaus <br class="lg:hidden"> Opa Hans
     </h2>
     <figure class="flex flex-col">
-      <img
-        class="mt-2 mx-2 shadow-xl"
-        src="../assets/haus_hinten.jpg"
+      <ResponsivePicture
+        :picture="HausHintenImg"
         alt="Ansicht hinten"
+        sizes="100vw"
+        img-class="mt-2 mx-2 shadow-xl"
       />
       <p class="mt-4 mx-8 text-[1.2rem] tracking-tight text-[#405D72]">
         Unser Ferienhaus bietet 200 qm barrierefreie Wohnfläche in ruhiger
@@ -19,3 +20,8 @@
     </figure>
   </section>
 </template>
+
+<script setup>
+import ResponsivePicture from "./ResponsivePicture.vue";
+import HausHintenImg from "../assets/haus_hinten.jpg?picture";
+</script>
