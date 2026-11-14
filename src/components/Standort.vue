@@ -5,11 +5,11 @@
       du uns
     </h2>
 
-    <div
-      class="w-full h-4 bg-gradient-to-b from-[#FFF1D5] to-[#FFF8F3] mt-10 hidden lg:visible"
-    ></div>
-    <img class="" src="../assets/map.jpg" alt="Standport Ferienhaus" />
-    <div class="w-full h-4 bg-gradient-to-b from-[#FFF8F3] to-[#FFF1D5]"></div>
+    <img
+      class="map-fade mt-6"
+      src="../assets/map.jpg"
+      alt="Standort Ferienhaus"
+    />
 
     <div class="mt-2 flex justify-center mx-4">
       <Icon
@@ -47,3 +47,25 @@
 <script setup>
 import { Icon } from "@iconify/vue";
 </script>
+
+<style scoped>
+/* Blendet oberen und unteren Bildrand weich ins Transparente aus,
+   damit die Karte nahtlos in den Hintergrund übergeht. */
+.map-fade {
+  --fade: 5%;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 var(--fade),
+    #000 calc(100% - var(--fade)),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 var(--fade),
+    #000 calc(100% - var(--fade)),
+    transparent
+  );
+}
+</style>
