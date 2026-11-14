@@ -1,106 +1,112 @@
 <template>
+  <section
+    class="flex flex-col min-h-screen p-4 justify-center bg-[#FFF1D5]"
+  >
+    <h2
+      class="mb-12 text-center text-5xl text-[#456882] sm:text-6xl font-berk"
+    >
+      Verfügbarkeit
+    </h2>
 
-  <section class="flex flex-col min-h-screen p-4 justify-center h-screen bg-[#FFF1D5]">
-    <h2 class="mb-12 text-center text-5xl text-[#456882] sm:text-6xl font-berk">Verfügbarkeit</h2>
-    
-    <!-- Traum-Ferienwohnungen Kalender Widget -->
-    <div class="flex justify-center">
-        <iframe 
-          :width="iframeWidth" 
-          :height="iframeHeight" 
-          :src="iframeSrc" 
-          frameborder="0" 
-          marginheight="0" 
-          marginwidth="0" 
-          allowtransparency="true" 
-          scrolling="no"
-          class="border-4 border-[#D2C1B6] rounded"
-          title="Verfügbarkeitskalender"
-        />
+    <!-- Kalender: 4 Monate (Desktop 2×2, Handy untereinander) -->
+    <div v-if="configured && !error" class="flex flex-col items-center gap-4">
+      <Calendar
+        :attributes="attributes"
+        :columns="isMobile ? 1 : 2"
+        :rows="isMobile ? 4 : 2"
+        :min-date="heute"
+        locale="de"
+        :first-day-of-week="2"
+        borderless
+        class="belegung rounded border-4 border-[#D2C1B6] p-2"
+      />
+      <div class="flex gap-6 text-[1rem] text-[#405D72]">
+        <span class="flex items-center gap-2">
+          <span class="inline-block h-4 w-4 rounded bg-[#E8B4A0]"></span>
+          belegt
+        </span>
+        <span class="flex items-center gap-2">
+          <span
+            class="inline-block h-4 w-4 rounded border border-[#D2C1B6] bg-[#FFF8F3]"
+          ></span>
+          frei
+        </span>
+      </div>
+      <p v-if="loading" class="text-[#405D72]">Belegung wird geladen …</p>
     </div>
-    <div class="">
 
-<a 
-:href="`https://www.traum-ferienwohnungen.de/${listingId}/#kalender`"
-target="_blank"
-rel="noopener noreferrer"
-class="flex items-center justify-center m-10 bg-[#dff9ff] border-4 border-[#D2C1B6] rounded"
->
-<Icon icon="material-symbols:subdirectory-arrow-right" class="mr-2 text-gray-600" width="32" />
-<img 
-src="https://static.traum-ferienwohnungen.de/images/vermieten/tfw-logo.png"
-alt="Traum-Ferienwohnungen.de"
-width="200"
-class="px-4 py-2 mt-1.5 "
-/>
-</a>
-</div>
+    <!-- Platzhalter, solange keine Tabelle verknüpft ist oder Laden fehlschlägt -->
+    <div
+      v-else
+      class="mx-auto flex max-w-md flex-col items-center gap-4 rounded border-4 border-[#D2C1B6] bg-[#F9F3EF] px-6 py-10 text-center"
+    >
+      <Icon
+        icon="material-symbols:calendar-month-outline-rounded"
+        width="56"
+        class="text-[#456882]"
+      />
+      <p class="text-[1.2rem] tracking-tight text-[#405D72]">
+        Unser Belegungskalender ist bald wieder hier zu sehen.
+      </p>
+    </div>
   </section>
 </template>
 
-<script>
-export default {
-  name: 'CalendarWidget',
-  data() {
+<script setup>
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { Icon } from "@iconify/vue";
+import { Calendar } from "v-calendar";
+import "v-calendar/style.css";
+import { useBelegung } from "@/composables/useBelegung";
+
+const { buchungen, loading, error, configured, laden } = useBelegung();
+
+const heute = new Date();
+
+// Belegt sind die Nächte von Anreise bis zum Tag vor der Abreise.
+// Der Abreisetag selbst bleibt frei, damit dort neue Gäste anreisen können.
+const attributes = computed(() =>
+  buchungen.value.map((b, i) => {
+    const letzteNacht = new Date(b.end);
+    letzteNacht.setDate(letzteNacht.getDate() - 1);
     return {
-      listingId: '257216',
-      isMobile: false,
-      
-      // Desktop Konfiguration
-      desktop: {
-        months: 6,
-        columns: 3,
-        width: 405,
-        height: 386
+      key: `buchung-${i}`,
+      highlight: {
+        fillMode: "solid",
+        style: { backgroundColor: "#E8B4A0" },
+        contentStyle: { color: "#1B3C53" },
       },
-      
-      // Mobile Konfiguration
-      mobile: {
-        months: 4,
-        columns: 2,
-        width: 300,
-        height: 400
-      }
-    }
-  },
-  
-  computed: {
-    currentConfig() {
-      return this.isMobile ? this.mobile : this.desktop;
-    },
-    
-    iframeSrc() {
-      const { months, columns } = this.currentConfig;
-      return `//www.traum-ferienwohnungen.de/widgets/kalender/${this.listingId}/?months=${months}&columns=${columns}`;
-    },
-    
-    iframeWidth() {
-      return this.currentConfig.width;
-    },
-    
-    iframeHeight() {
-      return this.currentConfig.height;
-    }
-  },
-  
-  mounted() {
-    this.checkScreenSize();
-    window.addEventListener('resize', this.checkScreenSize);
-  },
-  
-  beforeUnmount() {
-    window.removeEventListener('resize', this.checkScreenSize);
-  },
-  
-  methods: {
-    checkScreenSize() {
-      // Mobile Breakpoint bei 768px (Tailwind md breakpoint)
-      this.isMobile = window.innerWidth < 768;
-    }
-  }
-};
+      dates: { start: b.start, end: letzteNacht < b.start ? b.start : letzteNacht },
+    };
+  }),
+);
+
+const isMobile = ref(false);
+function checkScreenSize() {
+  isMobile.value = window.innerWidth < 768;
+}
+
+onMounted(() => {
+  checkScreenSize();
+  window.addEventListener("resize", checkScreenSize);
+  laden();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", checkScreenSize);
+});
 </script>
 
-<script setup>
-import { Icon } from "@iconify/vue";
-</script>
+<style scoped>
+/* Hellere Seitenfarbe als Kalenderhintergrund. Über die Variable der
+   Bibliothek, sonst überschreibt deren Stylesheet die Farbe mit Weiß. */
+.belegung {
+  --vc-bg: #fff8f3;
+  background-color: #fff8f3;
+}
+
+.belegung :deep(.vc-title),
+.belegung :deep(.vc-weekday) {
+  color: #456882;
+}
+</style>

@@ -8,15 +8,19 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build --force"
+    "type-check": "vue-tsc --build --force",
+    "mock:office": "node mock/office-server.mjs"
   },
   "dependencies": {
     "@fontsource/berkshire-swash": "^5.2.8",
     "@fontsource/quintessential": "^5.2.8",
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.1.5",
+    "@popperjs/core": "^2.11.8",
     "flowbite": "^4.0.2",
     "flowbite-vue": "^0.2.3",
+    "read-excel-file": "9.3.14",
+    "v-calendar": "^3.1.2",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
