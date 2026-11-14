@@ -1,107 +1,104 @@
 <template>
-  <section class="flex flex-col justify-center min-h-screen lg:bg-[#FFF1D5] py-16">
-    <h2 class="text-center text-6xl text-[#456882] font-berk">
-      Impressum
-    </h2>
+  <section
+    class="flex flex-col justify-center min-h-screen lg:bg-[#FFF1D5] px-4 py-16"
+  >
+    <h2 class="text-center text-6xl text-[#456882] font-berk">Impressum</h2>
 
+    <div
+      class="mx-auto mt-10 w-full max-w-md rounded border-4 border-[#D2C1B6] bg-[#FFF8F3] px-6 py-8 text-[#405D72] sm:px-8"
+    >
+      <p class="text-center text-xs uppercase tracking-widest text-[#456882]">
+        Angaben gemäß § 5 DDG
+      </p>
 
-    <div class="mx-4 mt-10 lg:mx-auto lg:max-w-5xl">
-      <div
-        class="mx-4 rounded-[2.5rem] border-2 border-[#D2C1B6] bg-[#FFF8F3] px-6 py-10 shadow-sm md:px-12"
-      >
-        <h3 class="text-center text-4xl text-[#456882] font-berk">
-          Angaben gemäß § 5 DDG
-        </h3>
+      <!-- Anbieter -->
+      <address class="mt-5 not-italic text-center">
+        <p class="text-3xl leading-tight text-[#456882] font-berk">
+          Detlef und Susanne Struve
+        </p>
+        <p class="mt-3 text-[1.15rem] tracking-tight">
+          Klosterweg 2<br />
+          25882 Tetenbüll
+        </p>
+      </address>
 
-        <div class="mt-12 grid items-start gap-12 lg:grid-cols-[1.05fr_1.2fr]">
-          <address class="not-italic space-y-2 text-[1.6rem] tracking-tight text-[#405D72]">
-            <p class="font-semibold text-[#1B3C53]">Hans Mustermann</p>
-            <p>Software Consulting Mustermann</p>
-            <p>Hauptstraße 2</p>
-            <p>99999 Musterstadt</p>
-          </address>
-
-          <div class="space-y-8">
-            <a
-              href="tel:+499991234567"
-              class="group flex items-center gap-6"
-              aria-label="Telefonnummer anrufen"
-            >
-              <span
-                class="flex h-[4.75rem] w-[4.75rem] shrink-0 items-center justify-center rounded-full border-2 border-[#D2C1B6] bg-[#F9F3EF] transition-transform duration-200 group-hover:scale-105"
-              >
-                <Icon
-                  icon="material-symbols:call-rounded"
-                  width="34"
-                  class="text-green-800"
-                />
-              </span>
-              <span class="min-w-0">
-                <span class="block text-sm uppercase tracking-widest text-[#456882]">
-                  Telefon
-                </span>
-                <span
-                  class="block truncate text-[1.6rem] tracking-tight text-[#405D72] transition-colors group-hover:text-[#456882]"
-                >
-                  0999 1234567
-                </span>
-              </span>
-            </a>
-
-            <div class="flex items-center gap-6">
-              <span
-                class="flex h-[4.75rem] w-[4.75rem] shrink-0 items-center justify-center rounded-full border-2 border-[#D2C1B6] bg-[#F9F3EF]"
-              >
-                <Icon
-                  icon="mdi:fax"
-                  width="34"
-                  class="text-green-800"
-                />
-              </span>
-              <div class="min-w-0">
-                <p class="text-sm uppercase tracking-widest text-[#456882]">Fax</p>
-                <p class="truncate text-[1.6rem] tracking-tight text-[#405D72]">
-                  0999 12345678
-                </p>
-              </div>
-            </div>
-
-            <a
-              href="mailto:mustermann@xy.de"
-              class="group flex items-center gap-6"
-              aria-label="E-Mail senden"
-            >
-              <span
-                class="flex h-[4.75rem] w-[4.75rem] shrink-0 items-center justify-center rounded-full border-2 border-[#D2C1B6] bg-[#F9F3EF] transition-transform duration-200 group-hover:scale-105"
-              >
-                <Icon
-                  icon="material-symbols:mail-rounded"
-                  width="34"
-                  class="text-green-800"
-                />
-              </span>
-              <span class="min-w-0">
-                <span class="block text-sm uppercase tracking-widest text-[#456882]">
-                  E-Mail
-                </span>
-                <span
-                  class="block truncate text-[1.6rem] tracking-tight text-[#405D72] transition-colors group-hover:text-[#456882]"
-                >
-                  mustermann@xy.de
-                </span>
-              </span>
-            </a>
-          </div>
-        </div>
-
-        <div class="mt-12 border-t-2 border-[#D2C1B6] pt-8">
-          <p class="text-center text-[1.3rem] tracking-tight text-[#405D72] opacity-80">
-            Verantwortlich für den Inhalt: Hans Mustermann
-          </p>
-        </div>
+      <div class="my-7 flex items-center gap-3" aria-hidden="true">
+        <span class="h-px flex-1 bg-[#D2C1B6]"></span>
+        <Icon
+          icon="material-symbols:home-rounded"
+          width="20"
+          class="text-[#D2C1B6]"
+        />
+        <span class="h-px flex-1 bg-[#D2C1B6]"></span>
       </div>
-    </div>
 
+      <!-- Kontakt -->
+      <ul class="space-y-5">
+        <li>
+          <a
+            href="tel:+4948659299"
+            class="group flex items-center gap-4 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[#456882]"
+          >
+            <span
+              class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-[#D2C1B6] bg-[#F9F3EF] transition-transform duration-200 group-hover:scale-105"
+            >
+              <Icon
+                icon="material-symbols:call-rounded"
+                width="24"
+                class="text-green-800"
+              />
+            </span>
+            <span class="min-w-0">
+              <span
+                class="block text-xs uppercase tracking-widest text-[#456882]"
+              >
+                Telefon
+              </span>
+              <span
+                class="block text-[1.15rem] tracking-tight transition-colors group-hover:text-[#1B3C53]"
+              >
+                04865 / 9299
+              </span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="mailto:info@Ferienwohnung-Eiderstedt-Nordsee.de"
+            class="group flex items-center gap-4 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[#456882]"
+          >
+            <span
+              class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-[#D2C1B6] bg-[#F9F3EF] transition-transform duration-200 group-hover:scale-105"
+            >
+              <Icon
+                icon="material-symbols:mail-rounded"
+                width="24"
+                class="text-green-800"
+              />
+            </span>
+            <span class="min-w-0">
+              <span
+                class="block text-xs uppercase tracking-widest text-[#456882]"
+              >
+                E-Mail
+              </span>
+              <span
+                class="block break-words text-[1.15rem] tracking-tight transition-colors group-hover:text-[#1B3C53]"
+              >
+                info@<wbr />Ferienwohnung-<wbr />Eiderstedt-<wbr />Nordsee.de
+              </span>
+            </span>
+          </a>
+        </li>
+      </ul>
+
+      <p
+        class="mt-8 border-t border-[#D2C1B6] pt-5 text-center text-sm tracking-tight opacity-90"
+      >
+        Herausgeber und verantwortlich für den Inhalt:<br />
+        Detlef und Susanne Struve
+      </p>
+    </div>
   </section>
 </template>
 
