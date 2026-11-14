@@ -1,26 +1,26 @@
 <template>
   <section
     ref="sectionEl"
-    class="flex flex-col min-h-screen p-4 justify-center bg-[#FFF1D5] lg:min-h-0 lg:justify-start lg:bg-transparent lg:px-4 lg:pb-16 lg:pt-14"
+    class="flex flex-col px-4 pb-16 pt-14"
   >
-    <p class="eyebrow text-center max-lg:hidden">Belegung</p>
+    <p class="eyebrow text-center">Belegung</p>
     <h2
-      class="mb-12 text-center text-5xl text-[#456882] sm:text-6xl font-berk lg:mb-10 lg:mt-3 lg:text-5xl xl:text-6xl"
+      class="mb-10 mt-3 text-center text-5xl text-[#456882] font-berk xl:text-6xl"
     >
       Verfügbarkeit
     </h2>
 
-    <!-- Kalender: 4 Monate (Desktop 2×2, Handy untereinander) -->
+    <!-- Kalender: Desktop 4 Monate (2×2), Handy 2 Monate untereinander -->
     <div v-if="configured && !error" class="flex flex-col items-center gap-4">
       <Calendar
         :attributes="attributes"
         :columns="schmal ? 1 : 2"
-        :rows="schmal ? 4 : 2"
+        :rows="2"
         :min-date="heute"
         locale="de"
         :first-day-of-week="2"
         borderless
-        class="belegung rounded border-4 border-[#D2C1B6] p-2 lg:shadow-xl lg:shadow-[#1B3C53]/10"
+        class="belegung rounded border-4 border-[#D2C1B6] p-2 shadow-xl shadow-[#1B3C53]/10"
       />
       <div class="flex gap-6 text-[1rem] text-[#405D72]">
         <span class="flex items-center gap-2">
@@ -36,8 +36,8 @@
       </div>
       <p v-if="loading" class="text-[#405D72]">Belegung wird geladen …</p>
 
-      <!-- Nur Desktop: Weg zur Anfrage -->
-      <div class="mt-6 flex flex-col items-center gap-4 text-center max-lg:hidden">
+      <!-- Weg zur Anfrage -->
+      <div class="mt-6 flex flex-col items-center gap-4 text-center">
         <p class="max-w-xs text-[#405D72]">
           Ihr Wunschtermin ist frei? Dann melden Sie sich gern bei uns.
         </p>
@@ -54,7 +54,7 @@
     <!-- Platzhalter, solange keine Tabelle verknüpft ist oder Laden fehlschlägt -->
     <div
       v-else
-      class="mx-auto flex max-w-md flex-col items-center gap-4 rounded border-4 border-[#D2C1B6] bg-[#F9F3EF] px-6 py-10 text-center"
+      class="mx-auto flex max-w-md flex-col items-center gap-4 rounded border-4 border-[#D2C1B6] bg-[#FFF8F3] px-6 py-10 text-center shadow-xl shadow-[#1B3C53]/10"
     >
       <Icon
         icon="material-symbols:calendar-month-outline-rounded"

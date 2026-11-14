@@ -1,10 +1,10 @@
 <template>
   <section
-    class="flex flex-col justify-center min-h-screen lg:min-h-0 lg:justify-start lg:pb-16 lg:pt-14"
+    class="flex flex-col pb-16 pt-14"
   >
-    <p class="eyebrow text-center max-lg:hidden">Anfahrt</p>
+    <p class="eyebrow text-center">Anfahrt</p>
     <h2
-      class="text-center text-6xl text-[#456882] font-berk lg:mt-3 lg:text-5xl xl:text-6xl"
+      class="mt-3 text-center text-5xl text-[#456882] font-berk xl:text-6xl"
     >
       Hier findest <br />
       du uns
@@ -17,22 +17,20 @@
       img-class="map-fade mt-6"
     />
 
-    <div class="mt-2 flex justify-center mx-4 lg:mt-4 lg:items-center">
+    <div class="mx-4 mt-4 flex items-center justify-center">
       <Icon
         icon="material-symbols:location-on-rounded"
-        width="4rem"
-        class="text-green-800 mt-2 lg:mt-0 lg:h-12 lg:w-12"
+        width="3rem"
+        class="text-green-800"
       />
-      <p
-        class="text-center mx-6 text-[1.6rem] tracking-tight text-[#405D72] lg:mx-4 lg:text-left lg:text-2xl lg:leading-snug lg:tracking-normal"
-      >
+      <p class="mx-4 text-left text-2xl leading-snug text-[#405D72]">
         Klosterweg 2a, <br />
         25882 Tetenbüll
       </p>
     </div>
 
     <!-- Route in der Karten-App öffnen -->
-    <div class="flex pb-4 pt-8 justify-center lg:gap-2 lg:pb-0">
+    <div class="flex justify-center gap-4 pt-8">
       <a
         :href="googleMapsUrl"
         target="_blank"
@@ -49,7 +47,7 @@
         rel="noopener noreferrer"
         aria-label="In Apple Karten öffnen"
         title="In Apple Karten öffnen"
-        class="karten-knopf ml-4 flex justify-center items-center w-[7em] h-[7em] bg-[#F9F3EF] border-2 border-[#D2C1B6] rounded-full relative"
+        class="karten-knopf flex justify-center items-center w-[7em] h-[7em] bg-[#F9F3EF] border-2 border-[#D2C1B6] rounded-full relative"
       >
         <Icon
           icon="lineicons:apple-brand"

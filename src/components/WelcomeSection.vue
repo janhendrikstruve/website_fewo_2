@@ -1,28 +1,81 @@
+<!-- Begrüßung mit Bildern und den wichtigsten Eckdaten (Handy und Desktop) -->
 <template>
-  <section class="flex flex-col justify-center h-screen">
-    <h2
-      class="mb-8 text-center text-6xl text-[#456882] sm:text-5xl font-berk font-extralight"
-    >
-      Ferienhaus <br class="lg:hidden"> Opa Hans
-    </h2>
-    <figure class="flex flex-col">
-      <ResponsivePicture
-        :picture="HausHintenImg"
-        alt="Ansicht hinten"
-        sizes="100vw"
-        picture-class="mt-2 mx-2 block shadow-xl"
-        img-class="w-full"
-      />
-      <p class="mt-4 mx-8 text-[1.2rem] tracking-tight text-[#405D72]">
-        Unser Ferienhaus bietet 200 qm barrierefreie Wohnfläche in ruhiger
-        Alleinlage – ideal für einen entspannten, nachhaltigen Urlaub. Es liegt nur 2,5 km
-        von einer idyllischen Badestelle entfernt.
+  <section class="px-5 pb-16 pt-14 sm:px-8 xl:px-12">
+    <header v-reveal class="text-center">
+      <p class="eyebrow">Nordsee · Halbinsel Eiderstedt</p>
+      <h1
+        class="mt-3 text-balance text-5xl leading-tight text-[#456882] font-berk xl:text-6xl"
+      >
+        Ferienhaus Opa Hans
+      </h1>
+      <p
+        class="mx-auto mt-4 max-w-[30rem] text-balance text-lg italic text-[#405D72]"
+      >
+        Fernab von allem Trubel fängt der Urlaub schon an der Gartenpforte an.
       </p>
+    </header>
+
+    <figure v-reveal class="mt-10">
+      <ImageSlider
+        :images="pictures"
+        sizes="(min-width: 1700px) 34vw, (min-width: 1280px) 45vw, (min-width: 1024px) 55vw, 100vw"
+        frame-class="rounded border-4 border-[#D2C1B6] shadow-xl shadow-[#1B3C53]/15"
+      />
+      <figcaption
+        class="mx-auto mt-8 max-w-[38rem] text-center text-lg leading-relaxed text-[#405D72] sm:text-xl"
+      >
+        Unser Ferienhaus bietet 200 qm barrierefreie Wohnfläche in ruhiger
+        Alleinlage, ideal für einen entspannten und nachhaltigen Urlaub. Bis
+        zur idyllischen Badestelle sind es nur 2,5 km.
+      </figcaption>
     </figure>
+
+    <!-- Eckdaten, alle aus dem Text weiter unten. So viele Spalten, wie
+         nebeneinander passen (je mindestens 9,5 bzw. 10,5rem), nie überlappend. -->
+    <ul
+      v-reveal
+      class="mx-auto mt-10 grid w-full max-w-[44rem] grid-cols-[repeat(auto-fit,minmax(9.5rem,1fr))] gap-x-4 gap-y-5 sm:grid-cols-[repeat(auto-fit,minmax(10.5rem,1fr))] sm:gap-x-6"
+    >
+      <li
+        v-for="fakt in fakten"
+        :key="fakt.text"
+        class="flex items-center gap-2.5 sm:gap-3"
+      >
+        <span
+          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#D2C1B6] bg-[#F9F3EF] sm:h-12 sm:w-12"
+        >
+          <Icon :icon="fakt.icon" width="1.5rem" class="text-green-800" />
+        </span>
+        <span class="min-w-0 text-sm leading-snug text-[#405D72] sm:text-base">
+          <strong class="block font-bold text-[#1B3C53]">{{ fakt.wert }}</strong>
+          {{ fakt.text }}
+        </span>
+      </li>
+    </ul>
   </section>
 </template>
 
 <script setup>
-import ResponsivePicture from "./ResponsivePicture.vue";
+import { Icon } from "@iconify/vue";
+import ImageSlider from "./ImageSlider.vue";
+
+// Beim Build in AVIF/WebP/JPEG und mehreren Breiten erzeugt (vite-imagetools)
 import HausHintenImg from "../assets/haus_hinten.jpg?picture";
+import WohnzimmerImg from "../assets/wohnzimmer.jpg?picture";
+import SitzeckeImg from "../assets/sitzecke.jpg?picture";
+
+const pictures = [
+  { picture: HausHintenImg, alt: "Haus hinten", caption: "Blick vom Garten" },
+  { picture: WohnzimmerImg, alt: "Wohnzimmer", caption: "Wohnzimmer" },
+  { picture: SitzeckeImg, alt: "Sitzecke", caption: "Sitzecke" },
+];
+
+const fakten = [
+  { icon: "material-symbols:home-rounded", wert: "200 m²", text: "Wohnfläche" },
+  { icon: "material-symbols:bed-rounded", wert: "3 Schlafzimmer", text: "bis 7 Gäste" },
+  { icon: "material-symbols:shower-rounded", wert: "3 Bäder", text: "1 rollstuhlgerecht" },
+  { icon: "material-symbols:accessible-forward-rounded", wert: "Barrierefrei", text: "und ebenerdig" },
+  { icon: "material-symbols:beach-access-rounded", wert: "2,5 km", text: "zum Badestrand" },
+  { icon: "material-symbols:ev-station-rounded", wert: "WLAN", text: "& E-Ladestation" },
+];
 </script>

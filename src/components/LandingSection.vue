@@ -7,12 +7,14 @@
     >
       Moin!
     </h2>
-    <Icon
-      icon="material-symbols:keyboard-double-arrow-down"
-      width="4rem"
-      class="absolute top-[85vh] left-1/2 z-10 text-[#1B3C53] border-1 border-black"
+    <a
+      href="#ferienhaus"
+      aria-label="Weiter zum Ferienhaus"
+      class="absolute top-[85vh] left-1/2 z-10 rounded-full text-[#1B3C53] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1B3C53]"
       style="animation: bounceX 2s infinite ease-in-out"
-    />
+    >
+      <Icon icon="material-symbols:keyboard-double-arrow-down" width="4rem" />
+    </a>
     <!-- Erstes Bild der Seite: sofort laden. Hochformat 4:5, also so
          breit wie 80 % der Fensterhöhe. -->
     <ResponsivePicture
@@ -24,7 +26,7 @@
     />
 
     <div
-      class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#FFF8F3] to-transparent pointer-events-none"
+      class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#FFF1D5] to-transparent pointer-events-none"
     ></div>
   </section>
 </template>

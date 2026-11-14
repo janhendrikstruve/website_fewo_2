@@ -1,40 +1,42 @@
+<!-- Handy: weitere Eindrücke, drinnen und draußen -->
 <template>
-  <section
-    class="flex flex-col items-center justify-center overflow-hidden relative h-screen bg-[#FFF1D5]"
-  >
-    
-    <h2 class="text-center text-[2.6rem] text-[#456882] font-berk">Drinnen</h2>
-    
-    <!-- Innen-Slider -->
-    <div class="p-2 w-full max-w-md mb-8">
-      <ImageSlider :images="innenImages" sizes="(min-width: 448px) 28rem, 100vw" />
+  <section class="px-5 pb-16 pt-14 sm:px-8">
+    <p v-reveal class="eyebrow text-center">Eindrücke</p>
+
+    <div v-reveal class="mx-auto mt-3 max-w-md">
+      <h2 class="text-center text-5xl text-[#456882] font-berk">Drinnen</h2>
+      <ImageSlider
+        class="mt-6"
+        :images="innenImages"
+        sizes="(min-width: 448px) 28rem, 100vw"
+        frame-class="rounded border-4 border-[#D2C1B6] shadow-xl shadow-[#1B3C53]/15"
+      />
     </div>
-    <h2 class="pt-2 text-center text-[2.6rem] text-[#456882] font-berk">Draußen</h2>
-    
-    <!-- Außen-Slider -->
-    <div class="p-2 w-full max-w-md">
-      <ImageSlider :images="aussenImages" sizes="(min-width: 448px) 28rem, 100vw" />
+
+    <div v-reveal class="mx-auto mt-12 max-w-md">
+      <h2 class="text-center text-5xl text-[#456882] font-berk">Draußen</h2>
+      <ImageSlider
+        class="mt-6"
+        :images="aussenImages"
+        sizes="(min-width: 448px) 28rem, 100vw"
+        frame-class="rounded border-4 border-[#D2C1B6] shadow-xl shadow-[#1B3C53]/15"
+      />
     </div>
   </section>
 </template>
 
 <script setup>
-import ImageSlider from './ImageSlider.vue';
+import ImageSlider from "./ImageSlider.vue";
 
-// Bilder importieren
 // Beim Build in AVIF/WebP/JPEG und mehreren Breiten erzeugt (vite-imagetools)
-import WohnzimmerImg from '../assets/wohnzimmer.jpg?picture';
-import SitzeckeImg from '../assets/sitzecke.jpg?picture';
-import VogelImg from '../assets/vogel.jpg?picture';
+import WohnzimmerImg from "../assets/wohnzimmer.jpg?picture";
+import SitzeckeImg from "../assets/sitzecke.jpg?picture";
+import VogelImg from "../assets/vogel.jpg?picture";
 
-// Innen-Bilder
 const innenImages = [
-  { picture: WohnzimmerImg, alt: 'Wohnzimmer' },
-  { picture: SitzeckeImg, alt: 'Sitzecke' },
+  { picture: WohnzimmerImg, alt: "Wohnzimmer", caption: "Wohnzimmer" },
+  { picture: SitzeckeImg, alt: "Sitzecke", caption: "Sitzecke" },
 ];
 
-// Außen-Bilder
-const aussenImages = [
-  { picture: VogelImg, alt: 'Vogel' },
-];
+const aussenImages = [{ picture: VogelImg, alt: "Möwe am Strand" }];
 </script>

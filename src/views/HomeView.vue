@@ -1,39 +1,26 @@
 <template>
   <!-- <div class="bg-[#FFF8F3]"> -->
   <div class="bg-[#FFF8F3]">
-    <header
-      class="absolute inset-x-0 top-0 z-50 transition-shadow duration-300 lg:fixed"
-      :class="{ 'lg:shadow-lg lg:shadow-[#1B3C53]/20': gescrollt }"
-    >
+    <header class="absolute inset-x-0 top-0 z-50 lg:fixed">
       <nav
-        class="flex items-center justify-between p-6 lg:h-16 lg:px-8 lg:py-0 lg:bg-[#456882]"
+        class="flex h-14 items-center justify-between px-4 transition-[background-color,box-shadow] duration-300 lg:h-16 lg:bg-[#456882] lg:px-8"
+        :class="{ 'lg:shadow-lg lg:shadow-[#1B3C53]/20': gescrollt }"
         aria-label="Hauptmenü"
       >
-        <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <!-- img class="h-20 w-auto" src="../assets/logo.jpg" alt="" -->
-            <!-- Kein Logo mehr -->
-          </a>
-        </div>
-        <div class="flex lg:hidden">
-          <button
-            type="button"
-            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            @click="mobileMenuOpen = true"
-          >
-            <span class="sr-only">Open main menu</span>
-            <!-- <Bars3Icon class="h-8 w-8 text-white" aria-hidden="true" /> -->
-            <Icon
-              icon="fontisto:nav-icon-a"
-              class="text-[#ffffff] shadow-2xl shadow-black"
-              width="2rem"
-            />
-          </button>
-        </div>
+        <div class="hidden lg:block lg:flex-1"></div>
+
+        <button
+          type="button"
+          class="-mr-2 ml-auto inline-flex h-11 w-11 items-center justify-center rounded-full text-[#F9F3EF] drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)] transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F9F3EF] lg:hidden"
+          @click="mobileMenuOpen = true"
+        >
+          <span class="sr-only">Menü öffnen</span>
+          <Bars3Icon class="h-8 w-8" aria-hidden="true" />
+        </button>
+
         <div class="hidden lg:flex lg:gap-x-8 xl:gap-x-12">
           <a
-            v-for="item in desktopNavigation"
+            v-for="item in navigation"
             :key="item.name"
             :href="item.href"
             class="nav-link font-berk text-xl leading-6 text-[#F9F3EF] xl:text-2xl"
@@ -42,52 +29,86 @@
             >{{ item.name }}</a
           >
         </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <!-- Leerer Platzhalter anstatt login -->
-        </div>
+        <div class="hidden lg:block lg:flex-1"></div>
       </nav>
-      <Dialog
-        class="lg:hidden"
-        @close="mobileMenuOpen = false"
-        :open="mobileMenuOpen"
-      >
-        <div class="fixed inset-0 z-50" />
-        <DialogPanel
-          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-        >
-          <div class="flex items-center justify-between">
-            <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              <img
-                class="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
-            </a>
-            <button
-              type="button"
-              class="-m-2.5 rounded-md p-2.5 text-gray-700"
-              @click="mobileMenuOpen = false"
+
+      <!-- Handy-Menü: schiebt sich von rechts herein -->
+      <TransitionRoot as="template" :show="mobileMenuOpen">
+        <Dialog class="relative z-50 lg:hidden" @close="mobileMenuOpen = false">
+          <TransitionChild
+            as="template"
+            enter="duration-300 ease-out"
+            enter-from="opacity-0"
+            enter-to="opacity-100"
+            leave="duration-200 ease-in"
+            leave-from="opacity-100"
+            leave-to="opacity-0"
+          >
+            <div
+              class="fixed inset-0 bg-[#1B3C53]/40 backdrop-blur-sm"
+              aria-hidden="true"
+            />
+          </TransitionChild>
+
+          <TransitionChild
+            as="template"
+            enter="transform transition duration-300 ease-out"
+            enter-from="translate-x-full"
+            enter-to="translate-x-0"
+            leave="transform transition duration-200 ease-in"
+            leave-from="translate-x-0"
+            leave-to="translate-x-full"
+          >
+            <DialogPanel
+              class="fixed inset-y-0 right-0 flex w-full max-w-sm flex-col overflow-y-auto bg-[#456882] px-6 pb-8 pt-3 text-[#F9F3EF] shadow-2xl"
             >
-              <span class="sr-only">Close menu</span>
-              <XMarkIcon class="h-8 w-8" aria-hidden="true" />
-            </button>
-          </div>
-          <div class="mt-6 flow-root">
-            <div class="-my-6 divide-y divide-gray-500/10">
-              <div class="space-y-2 py-6">
-                <a
-                  v-for="item in navigation"
-                  :key="item.name"
-                  :href="item.href"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-2xl font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >{{ item.name }}</a
+              <div class="flex h-11 items-center justify-between">
+                <DialogTitle class="font-berk text-2xl">Opa Hans</DialogTitle>
+                <button
+                  type="button"
+                  class="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F9F3EF]"
+                  @click="mobileMenuOpen = false"
                 >
+                  <span class="sr-only">Menü schließen</span>
+                  <XMarkIcon class="h-8 w-8" aria-hidden="true" />
+                </button>
               </div>
-            </div>
-          </div>
-        </DialogPanel>
-      </Dialog>
+
+              <ul class="mt-8 divide-y divide-[#F9F3EF]/15">
+                <li v-for="item in navigation" :key="item.name">
+                  <a
+                    :href="item.href"
+                    class="flex items-center justify-between rounded py-4 font-berk text-3xl transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F9F3EF]"
+                    :class="item.href === aktiv ? 'text-white' : 'text-[#F9F3EF]/80'"
+                    :aria-current="item.href === aktiv ? 'true' : undefined"
+                    @click.prevent="geheZu(item.href)"
+                  >
+                    {{ item.name }}
+                    <Moewen
+                      v-if="item.href === aktiv"
+                      class="h-6 w-6 text-[#F9F3EF]/70"
+                    />
+                  </a>
+                </li>
+              </ul>
+
+              <div class="mt-auto flex flex-col items-center pt-10 text-center">
+                <Moewen class="h-8 w-8 text-[#F9F3EF]/60" />
+                <p class="mt-3 italic text-[#F9F3EF]/85">
+                  Fragen? Rufen Sie uns gern an.
+                </p>
+                <a
+                  href="tel:+4948659299"
+                  class="mt-4 inline-flex items-center gap-2 rounded-full bg-[#F9F3EF] px-6 py-3 font-bold text-[#1B3C53] shadow-md transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#456882]"
+                >
+                  <PhoneIcon class="h-5 w-5" aria-hidden="true" />
+                  04865 / 9299
+                </a>
+              </div>
+            </DialogPanel>
+          </TransitionChild>
+        </Dialog>
+      </TransitionRoot>
     </header>
     <div class="relative isolate">
       <!-- Nur das passende Layout wird eingebaut (nicht bloß per CSS
@@ -118,7 +139,7 @@
           </div>
 
           <div class="streifen col-start-2 row-start-1">
-            <WelcomeSectionLg id="ferienhaus" class="scroll-mt-16" />
+            <WelcomeSection id="ferienhaus" class="scroll-mt-16" />
             <SectionDivider />
             <About id="ueber-uns" class="scroll-mt-16" />
           </div>
@@ -132,47 +153,45 @@
           </div>
         </div>
 
-        <SiteFooter :navigation="desktopNavigation" />
+        <SiteFooter :navigation="navigation" />
       </div>
-      <div v-else class="mx-auto sm:py-48">
+      <!-- Handy: dieselben Abschnitte untereinander auf einem beigen
+           Streifen, getrennt durch die Möwen-Trenner -->
+      <div v-else class="bg-[#FFF1D5]">
         <LandingSection />
 
-        <WelcomeSection />
-
-        <div
-          class="w-full h-4 bg-gradient-to-b from-[#FFF8F3] to-[#FFF1D5] min-[1200px]:hidden"
-        ></div>
-
+        <WelcomeSection id="ferienhaus" />
+        <SectionDivider />
         <Pictures />
+        <SectionDivider />
+        <Booking id="verfuegbarkeit" />
+        <SectionDivider />
+        <About id="ueber-uns" kurz />
+        <SectionDivider />
+        <Standort id="standort" />
+        <SectionDivider />
+        <Impressum id="kontakt" />
 
-        <Standort />
-
-        <div
-          class="w-full h-4 bg-gradient-to-b from-[#FFF8F3] to-[#FFF1D5] min-[1200px]:hidden"
-        ></div>
-
-        <Booking />
+        <SiteFooter :navigation="navigation" />
       </div>
-      <div
-        class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-        aria-hidden="true"
-      ></div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from "vue";
-import { Dialog, DialogPanel } from "@headlessui/vue";
-import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
-import HomeView from "./HomeView.vue";
+import { nextTick, onBeforeUnmount, onMounted, ref } from "vue";
+import {
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+  TransitionChild,
+  TransitionRoot,
+} from "@headlessui/vue";
+import { Bars3Icon, PhoneIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 import WelcomeSection from "@/components/WelcomeSection.vue";
-import WelcomeSectionLg from "@/components/WelcomeSectionLg.vue";
 import LandingSection from "@/components/LandingSection.vue";
 import Pictures from "@/components/Pictures.vue";
-import { Icon } from "@iconify/vue";
 import Standort from "@/components/Standort.vue";
-import Colors from "@/components/Colors.vue";
 import Booking from "@/components/Booking.vue";
 import About from "@/components/About.vue";
 import Impressum from "@/components/Impressum.vue";
@@ -180,18 +199,9 @@ import SectionDivider from "@/components/SectionDivider.vue";
 import SiteFooter from "@/components/SiteFooter.vue";
 import Moewen from "@/components/Moewen.vue";
 
-const navigation = [
-  { name: "Ferienhaus", href: "#" },
-  { name: "Verfügbarkeit", href: "#" },
-  { name: "Über uns", href: "#" },
-  { name: "Preise und Buchung", href: "#" },
-  { name: "Standort", href: "#" },
-  { name: "Kontakt + Impressum", href: "#" },
-];
-
-// Menü der Desktop-Ansicht: nur Punkte, zu denen es einen Abschnitt gibt.
+// Menüpunkte für Handy, Desktop und Fußzeile – nur Abschnitte, die es gibt.
 // ("Preise und Buchung" fehlt, bis es dazu Inhalt gibt.)
-const desktopNavigation = [
+const navigation = [
   { name: "Ferienhaus", href: "#ferienhaus" },
   { name: "Verfügbarkeit", href: "#verfuegbarkeit" },
   { name: "Über uns", href: "#ueber-uns" },
@@ -200,6 +210,21 @@ const desktopNavigation = [
 ];
 
 const mobileMenuOpen = ref(false);
+
+// Handy-Menü: erst schließen, dann zum Abschnitt scrollen. Während das
+// Menü offen ist, sperrt es das Scrollen der Seite.
+async function geheZu(href) {
+  const warOffen = mobileMenuOpen.value;
+  mobileMenuOpen.value = false;
+  await nextTick();
+  setTimeout(
+    () => {
+      document.querySelector(href)?.scrollIntoView();
+      history.replaceState(null, "", href);
+    },
+    warOffen ? 250 : 0,
+  );
+}
 
 // Gleiche Grenze wie Tailwinds lg-Breakpoint (1024px)
 const desktopQuery = window.matchMedia("(min-width: 1024px)");
@@ -210,23 +235,22 @@ onBeforeUnmount(() =>
   desktopQuery.removeEventListener("change", onLayoutChange),
 );
 
-// Beim Scrollen: Schatten unter der Menüleiste und aktiver Menüpunkt.
+// Beim Scrollen: Schatten unter der Desktop-Leiste und aktiver Menüpunkt.
 // Aktiv ist der Abschnitt, dessen Anfang zuletzt über die Bildmitte
 // gewandert ist. Die Streifen laufen nebeneinander; bei Gleichstand gewinnt
 // der frühere Menüpunkt.
 const gescrollt = ref(false);
-const aktiv = ref(desktopNavigation[0].href);
+const aktiv = ref(navigation[0].href);
 let frame = 0;
 
 function aktualisiere() {
   frame = 0;
   gescrollt.value = window.scrollY > 8;
-  if (!isDesktop.value) return;
 
   const mitte = window.innerHeight * 0.45;
-  let bester = desktopNavigation[0].href;
+  let bester = navigation[0].href;
   let besterTop = -Infinity;
-  for (const { href } of desktopNavigation) {
+  for (const { href } of navigation) {
     const el = document.querySelector(href);
     if (!el) continue;
     const { top, bottom } = el.getBoundingClientRect();
@@ -239,7 +263,7 @@ function aktualisiere() {
   const amEnde =
     window.innerHeight + window.scrollY >=
     document.documentElement.scrollHeight - 4;
-  aktiv.value = amEnde ? desktopNavigation.at(-1).href : bester;
+  aktiv.value = amEnde ? navigation.at(-1).href : bester;
 }
 
 function onScroll() {
