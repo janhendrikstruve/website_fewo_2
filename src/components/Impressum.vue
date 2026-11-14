@@ -18,7 +18,7 @@
       <!-- Anbieter -->
       <address class="mt-5 not-italic text-center">
         <p class="text-3xl leading-tight text-[#456882] font-berk">
-          Detlef und Susanne Struve
+          Detlef Struve
         </p>
         <p class="mt-3 text-[1.15rem] tracking-tight">
           Klosterweg 2<br />
@@ -100,7 +100,7 @@
         class="mt-8 border-t border-[#D2C1B6] pt-5 text-center text-sm tracking-tight opacity-90"
       >
         Herausgeber und verantwortlich für den Inhalt:<br />
-        Detlef und Susanne Struve
+        Detlef Struve
       </p>
     </div>
   </section>
