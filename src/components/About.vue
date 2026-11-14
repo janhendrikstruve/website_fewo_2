@@ -7,13 +7,13 @@
         v-reveal
         class="portrait rounded-full border-4 border-[#D2C1B6] shadow-xl shadow-[#1B3C53]/20"
       >
-        <!-- Kreis 13,75rem, Bild darin um 150 % vergrößert -->
+        <!-- Kreis 13,75rem; Ausschnitt auf den Seehund gelegt -->
         <ResponsivePicture
-          :picture="MamaPapaImg"
-          alt="Susanne und Detlef Struve"
-          sizes="21rem"
+          :picture="SeehundImg"
+          alt="Seehund am Nordseestrand"
+          sizes="14rem"
           picture-class="block h-full w-full overflow-hidden rounded-full"
-          img-class="h-full w-full scale-150 object-cover"
+          img-class="seehund h-full w-full object-cover"
         />
       </div>
 
@@ -76,7 +76,7 @@
 
 <script setup>
 import ResponsivePicture from "./ResponsivePicture.vue";
-import MamaPapaImg from "../assets/mama_papa.jpg?picture";
+import SeehundImg from "../assets/seehund.jpg?picture";
 </script>
 
 <style scoped>
@@ -84,17 +84,15 @@ import MamaPapaImg from "../assets/mama_papa.jpg?picture";
    shape-outside lässt die Zeilen dem Kreis folgen. */
 .about {
   --rand: 2rem; /* = px-8 */
-  --ueberstand: 3rem; /* so weit ragt das Foto in die Lücke */
+  --ueberstand: 1.5rem; /* so weit ragt das Foto in die Lücke */
 }
 @media (min-width: 1280px) {
   .about {
     --rand: 3.5rem; /* = xl:px-14 */
-    --ueberstand: 4rem;
-  }
-}
-@media (min-width: 1700px) {
-  .about {
-    --ueberstand: 6.25rem;
+    /* Das Foto ragt etwa zur Hälfte in die Lücke. Die Lücke wächst von
+       ca. 75px (1280px Fenster) bis ca. 200px (1920px), daher wächst
+       auch der Überstand mit der Fensterbreite. */
+    --ueberstand: clamp(1.75rem, 9.6vw - 5.5rem, 5.5rem);
   }
 }
 .portrait {
@@ -107,6 +105,12 @@ import MamaPapaImg from "../assets/mama_papa.jpg?picture";
   shape-outside: circle(50%);
   shape-margin: 1.25rem;
   background-color: #fff1d5;
+}
+
+/* Seehund mittig in den Kreis rücken */
+:deep(.seehund) {
+  object-position: 50% 62%;
+  transform: scale(1.35);
 }
 
 .prosa p {

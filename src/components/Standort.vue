@@ -90,8 +90,10 @@ const appleMapsUrl = `https://maps.apple.com/?q=${adresse}`;
 }
 
 /* Blendet oberen und unteren Bildrand weich ins Transparente aus,
-   damit die Karte nahtlos in den Hintergrund übergeht. */
-.map-fade {
+   damit die Karte nahtlos in den Hintergrund übergeht.
+   :deep, weil das <img> in ResponsivePicture liegt (scoped greift dort
+   sonst nicht). */
+:deep(.map-fade) {
   --fade: 5%;
   -webkit-mask-image: linear-gradient(
     to bottom,

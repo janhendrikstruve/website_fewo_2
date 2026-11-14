@@ -97,10 +97,12 @@
         <!-- Zwei durchlaufende beige Streifen: links das Haus und die
              Gastgeber, rechts Kalender, Anfahrt und Kontakt. Die Abschnitte
              stapeln sich je Streifen mit ihrem natürlichen Abstand.
-             Spalten: Rand | links | Lücke | rechts | Rand. Ab 1700px gelten
-             die Verhältnisse der Full-HD-Ansicht. -->
+             Spalten: Rand | links | Lücke | rechts | Rand. Ab 1280px überall
+             dieselben Verhältnisse (wie Full HD), damit Abstände nicht an
+             einer Grenze springen. Links mindestens 30rem für den Text, rechts mindestens 38,25rem, damit der
+             Kalender zweispaltig mit Rand Platz hat. -->
         <div
-          class="relative grid grid-cols-[1.5rem_minmax(0,1fr)_4.5rem_22rem_1.5rem] xl:grid-cols-[2rem_minmax(0,1fr)_5.5rem_35.5rem_2rem] min-[1700px]:grid-cols-[4.74fr_37.9fr_19fr_29fr_9.5fr]"
+          class="relative grid grid-cols-[1.5rem_minmax(0,1fr)_2.25rem_22rem_1.5rem] xl:grid-cols-[4.74fr_minmax(30rem,37.9fr)_9.5fr_minmax(38.25rem,29fr)_9.5fr]"
         >
           <!-- Möwen in der Lücke zwischen den Streifen (reiner Schmuck) -->
           <div
@@ -119,18 +121,6 @@
             <WelcomeSectionLg id="ferienhaus" class="scroll-mt-16" />
             <SectionDivider />
             <About id="ueber-uns" class="scroll-mt-16" />
-
-            <!-- Abschluss des Streifens: füllt den Platz bis zur Fußzeile,
-                 egal wie hoch der rechte Streifen gerade ist. -->
-            <div class="relative min-h-[20rem] flex-1 overflow-hidden">
-              <ResponsivePicture
-                :picture="SeehundImg"
-                alt="Seehund am Nordseestrand"
-                sizes="(min-width: 1700px) 38vw, 50vw"
-                picture-class="absolute inset-0"
-                img-class="ausklang h-full w-full object-cover"
-              />
-            </div>
           </div>
 
           <div class="streifen col-start-4 row-start-1">
@@ -189,8 +179,6 @@ import Impressum from "@/components/Impressum.vue";
 import SectionDivider from "@/components/SectionDivider.vue";
 import SiteFooter from "@/components/SiteFooter.vue";
 import Moewen from "@/components/Moewen.vue";
-import ResponsivePicture from "@/components/ResponsivePicture.vue";
-import SeehundImg from "@/assets/seehund.jpg?picture";
 
 const navigation = [
   { name: "Ferienhaus", href: "#" },
@@ -277,13 +265,6 @@ onBeforeUnmount(() => {
   flex-direction: column;
   background-color: #fff1d5;
   box-shadow: 0 0 2.5rem rgba(210, 193, 182, 0.35);
-}
-
-/* Seehund-Foto: blendet oben weich aus dem Beige ein (wie die Karte) */
-:deep(.ausklang) {
-  object-position: 50% 58%;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 30%);
-  mask-image: linear-gradient(to bottom, transparent, #000 30%);
 }
 
 /* Menülink: Unterstrich wächst beim Überfahren aus der Mitte */
