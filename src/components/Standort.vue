@@ -14,7 +14,7 @@
     <div class="mt-2 flex justify-center mx-4">
       <Icon
         icon="material-symbols:location-on-rounded"
-        width="64"
+        width="4rem"
         class="text-green-800 mt-2"
       />
       <p class="text-center mx-6 text-[1.6rem] tracking-tight text-[#405D72]">
@@ -28,7 +28,7 @@
         type="button"
         class="flex justify-center items-center w-[7em] h-[7em] bg-[#F9F3EF] border-2 border-[#D2C1B6] rounded-full"
       >
-        <Icon icon="logos:google-maps" width="48" class="" />
+        <Icon icon="logos:google-maps" width="3rem" class="" />
       </button>
       <button
         type="button"
@@ -36,8 +36,8 @@
       >
         <Icon
           icon="lineicons:apple-brand"
-          width="64"
-          class="text-[#1B3C53] absolute -top-[-18px]"
+          width="4rem"
+          class="text-[#1B3C53] absolute top-[1.125rem]"
         />
       </button>
     </figure>

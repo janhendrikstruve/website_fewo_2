@@ -3,13 +3,13 @@
     <h2
       ref="h2Element"
       class="font-berk absolute top-[15vh] left-1/2 transform -translate-x-1/2 text-8xl tracking-tight text-[#ffffff] sm:text-6xl"
-      style="text-shadow: 4px 4px 6px black"
+      style="text-shadow: 0.25rem 0.25rem 0.375rem black"
     >
       Moin!
     </h2>
     <Icon
       icon="material-symbols:keyboard-double-arrow-down"
-      width="64"
+      width="4rem"
       class="absolute top-[85vh] left-1/2 z-10 text-[#1B3C53] border-1 border-black"
       style="animation: bounceX 2s infinite ease-in-out"
     />
@@ -36,7 +36,7 @@ import { Icon } from "@iconify/vue";
     transform: translate(-50%, 0);
   }
   50% {
-    transform: translate(-50%, -12px);
+    transform: translate(-50%, -0.75rem);
   }
 }
 </style>

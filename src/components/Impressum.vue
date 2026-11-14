@@ -26,7 +26,7 @@
         <span class="h-px flex-1 bg-[#D2C1B6]"></span>
         <Icon
           icon="material-symbols:home-rounded"
-          width="20"
+          width="1.25rem"
           class="text-[#D2C1B6]"
         />
         <span class="h-px flex-1 bg-[#D2C1B6]"></span>
@@ -44,7 +44,7 @@
             >
               <Icon
                 icon="material-symbols:call-rounded"
-                width="24"
+                width="1.5rem"
                 class="text-green-800"
               />
             </span>
@@ -72,7 +72,7 @@
             >
               <Icon
                 icon="material-symbols:mail-rounded"
-                width="24"
+                width="1.5rem"
                 class="text-green-800"
               />
             </span>

@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+ * Grundschriftgröße, an der alle rem-Werte (Tailwind) hängen.
+ * Wächst sanft mit der Bildschirmbreite: Full HD ≈ 16 px, 1440p ≈ 18,75 px.
+ * Unter- und Obergrenze in % bzw. rem beziehen sich auf die Schriftgröße,
+ * die Nutzer im Browser eingestellt haben – deren Einstellung und der
+ * Browser-Zoom wirken also weiterhin.
+ */
+html {
+  font-size: clamp(100%, 0.5rem + 0.42vw, 125%);
+}

@@ -24,7 +24,7 @@
             <Icon
               icon="fontisto:nav-icon-a"
               class="text-[#ffffff] shadow-2xl shadow-black"
-              width="32"
+              width="2rem"
             />
           </button>
         </div>
@@ -86,7 +86,7 @@
     </header>
     <div class="relative isolate">
       <div
-        class="mx-auto grid grid-cols-[0.25fr_2fr_1fr_1fr_0.5fr] max-lg:hidden"
+        class="mx-auto grid grid-cols-[0.25fr_2fr_1fr_1fr_0.5fr] min-[1700px]:grid-cols-[4.74fr_37.9fr_19fr_29fr_9.5fr] max-lg:hidden"
       >
         <WelcomeSectionLg class="col-start-2" />
 

@@ -31,7 +31,7 @@
           aria-label="Vorheriges Bild"
           @click="prev"
         >
-          <Icon icon="material-symbols:chevron-left-rounded" width="28" />
+          <Icon icon="material-symbols:chevron-left-rounded" width="1.75rem" />
         </button>
         <button
           type="button"
@@ -39,7 +39,7 @@
           aria-label="Nächstes Bild"
           @click="next"
         >
-          <Icon icon="material-symbols:chevron-right-rounded" width="28" />
+          <Icon icon="material-symbols:chevron-right-rounded" width="1.75rem" />
         </button>
       </template>
     </div>

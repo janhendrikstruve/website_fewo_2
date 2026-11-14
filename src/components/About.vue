@@ -6,7 +6,7 @@
       >
         Moin!
       </h2>
-      <div class="absolute -right-[100px] -top-12 col-start-5 w-[220px] h-[220px] rounded-full border-4 border-[#D2C1B6] overflow-hidden">
+      <div class="absolute -right-[6.25rem] -top-12 col-start-5 w-[13.75rem] h-[13.75rem] rounded-full border-4 border-[#D2C1B6] overflow-hidden">
         <img
           class="w-full h-full object-cover scale-150 rounded-full"
           src="../assets/mama_papa.jpg"

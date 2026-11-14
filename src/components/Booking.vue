@@ -42,7 +42,7 @@
     >
       <Icon
         icon="material-symbols:calendar-month-outline-rounded"
-        width="56"
+        width="3.5rem"
         class="text-[#456882]"
       />
       <p class="text-[1.2rem] tracking-tight text-[#405D72]">
@@ -97,16 +97,59 @@ onBeforeUnmount(() => {
 });
 </script>
 
-<style scoped>
+<style>
+/* Nicht scoped: v-calendar trägt das Scope-Attribut nicht an seinem
+   Wurzelelement. Die Klasse .belegung ist eindeutig genug. */
 /* Hellere Seitenfarbe als Kalenderhintergrund. Über die Variable der
    Bibliothek, sonst überschreibt deren Stylesheet die Farbe mit Weiß. */
 .belegung {
   --vc-bg: #fff8f3;
   background-color: #fff8f3;
+
+  /* Die Bibliothek arbeitet mit festen Pixeln. Hier dieselben Werte in rem,
+     damit der Kalender mit der Grundschrift (und der Browser-Einstellung)
+     mitskaliert. 1rem entspricht 16px bei Standardeinstellung. */
+  --vc-text-2xs: 0.625rem;
+  --vc-text-xs: 0.75rem;
+  --vc-text-sm: 0.875rem;
+  --vc-text-base: 1rem;
+  --vc-text-lg: 1.125rem;
+  --vc-text-xl: 1.25rem;
+  --vc-text-2xl: 1.5rem;
 }
 
-.belegung :deep(.vc-title),
-.belegung :deep(.vc-weekday) {
+.belegung .vc-pane {
+  min-width: 15.625rem;
+}
+.belegung .vc-weeks {
+  padding: 0.375rem;
+  min-width: 14.5rem;
+}
+.belegung .vc-day {
+  min-height: 2rem;
+}
+.belegung .vc-day-content,
+.belegung .vc-highlight {
+  width: 1.75rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
+}
+/* Mittelstücke eines Zeitraums müssen die ganze Zelle füllen, sonst
+   zerfällt das Band in einzelne Kästchen. */
+.belegung .vc-highlight.vc-highlight-base-middle {
+  width: 100%;
+}
+.belegung .vc-header .vc-title {
+  padding: 0 0.5rem;
+  line-height: 1.875rem;
+}
+.belegung .vc-header .vc-arrow {
+  width: 1.75rem;
+  height: 1.875rem;
+}
+
+.belegung .vc-title,
+.belegung .vc-weekday {
   color: #456882;
 }
 </style>
