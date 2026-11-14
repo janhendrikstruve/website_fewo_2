@@ -24,50 +24,69 @@
 
       <div v-reveal class="prosa">
         <p>
-          Wir sind Susanne und Detlef Struve, und wir heißen Sie herzlich
-          willkommen in unserem Ferienhaus Opa Hans! Das ehemalige Zuhause von
-          Opa Hans haben wir mit viel Liebe zum Detail modernisiert, ohne
-          seinen ursprünglichen Charme zu verlieren. Es liegt völlig allein im
-          malerischen Wasserkoog, umgeben von reetgedeckten Häusern – eine
-          Kulisse wie aus einem Film.
+          Wir sind Susanne und Detlef Struve und freuen uns, dass Sie zu uns
+          gefunden haben. Herzlich willkommen im Ferienhaus Opa Hans! Hier hat
+          früher Opa Hans gewohnt. Wir haben sein Zuhause mit viel Liebe zum
+          Detail modernisiert und dabei darauf geachtet, dass es seinen
+          Charme behält.
         </p>
         <p>
-          Auf 200 m² erwarten Sie drei Schlafzimmer und drei Bäder für maximal
-          sieben Gäste. Das gesamte Haus ist barrierefrei und ebenerdig, mit
-          einem rollstuhlgerechten Bad. Ein echtes Schmuckstück ist das
-          Familienzimmer mit einem riesigen XXL-Bett (270 x 200 cm) und eigenem
-          Fernseher – hier schlafen drei Personen bequem. Für kleine Kinder
-          haben wir ein Spielzimmer und stellen auf Wunsch Babyausstattung
-          bereit, damit Sie mit leichtem Gepäck anreisen können. Die Küche ist
-          komplett ausgestattet (Geschirrspüler, Waschmaschine), WLAN und eine
-          E-Ladestation sind selbstverständlich. Haustiere und Rauchen sind
-          nicht gestattet.
+          Das Haus steht ganz für sich inmitten grüner Wiesen im Wasserkoog,
+          einem Ortsteil von Tetenbüll auf der Halbinsel Eiderstedt. Direkte
+          Nachbarn gibt es nicht, Verkehr auch nicht – dafür viel Himmel, Ruhe
+          und die reetgedeckten Häuser des Koogs, eine Kulisse wie aus einem
+          Film. Unser Bauernhof liegt nur 250 m entfernt. Dort halten wir
+          Rinder, die Sie auf den Weiden rund ums Haus grasen sehen.
+        </p>
+      </div>
+
+      <div v-reveal class="prosa">
+        <h3>Platz für die ganze Familie</h3>
+        <p>
+          Auf 200 m² finden bis zu sieben Gäste Platz, mit drei Schlafzimmern
+          und drei Bädern. Das gesamte Haus ist ebenerdig und barrierefrei,
+          eines der Bäder ist rollstuhlgerecht. Unser Schmuckstück ist das
+          Familienzimmer: In dem riesigen XXL-Bett (270 x 200 cm) schlafen
+          drei Personen bequem, ein eigener Fernseher gehört dazu.
+        </p>
+        <p>
+          Die Kleinen haben ihr eigenes Spielzimmer, und auf Wunsch stellen
+          wir Ihnen Babyausstattung bereit, damit Sie mit leichtem Gepäck
+          anreisen können. Die Küche ist komplett ausgestattet, auch
+          Geschirrspüler und Waschmaschine sind da. WLAN und eine
+          E-Ladestation sind bei uns selbstverständlich. Bitte haben Sie
+          Verständnis dafür, dass Haustiere und Rauchen im Haus nicht
+          gestattet sind.
         </p>
       </div>
 
       <div v-reveal class="prosa">
         <h3>Garten, Deich und Meer</h3>
         <p>
-          Der Garten mit Terrasse lädt zum Frühstücken ein, und direkt hinter
-          der Pforte beginnt der Deich – ideal für morgendliche Spaziergänge.
-          Der herrliche Naturbadestrand und der kleine Hafen Tetenbüll-Spieker
-          sind nur 2,5 km entfernt. Ob Wattwandern, Radfahren, Kitesurfen oder
+          Frühstücken Sie in Ruhe auf der Terrasse im Garten. Gleich hinter
+          der Pforte beginnt der Deich, wie gemacht für einen Spaziergang am
+          Morgen. Zum Naturbadestrand und zum kleinen Hafen Tetenbüll-Spieker
+          sind es nur 2,5 km. Ob Wattwandern, Radfahren, Kitesurfen oder
           einfach die Stille genießen: Hier findet jeder sein Urlaubsglück.
-          Husum und St. Peter-Ording sind in kurzer Autofahrt zu erreichen.
+          Und wenn Ihnen nach etwas Trubel ist, sind Sie mit dem Auto schnell
+          in Husum oder St. Peter-Ording.
         </p>
       </div>
 
       <div v-reveal class="prosa">
         <h3>Persönlich für Sie da</h3>
         <p>
-          Wir putzen das Haus persönlich und sind während Ihres Aufenthalts
-          jederzeit für Sie da – kein Callcenter, sondern direkter, familiärer
-          Kontakt. Buchen Sie unkompliziert mit 20 % Anzahlung und Restzahlung
-          vier Wochen vor Anreise. Unsere Stornobedingungen sind fair
-          gestaffelt, und wir empfehlen eine Reiserücktrittsversicherung. 25
-          begeisterte Gäste haben uns mit 4,98 Sternen bewertet; sie heben immer
-          wieder die Sauberkeit, die Ruhe und die persönliche Betreuung hervor.
-          Überzeugen Sie sich selbst – wir freuen uns auf Ihren Besuch!
+          Bei uns landen Sie in keinem Callcenter. Wir putzen das Haus selbst,
+          wohnen gleich nebenan auf dem Hof und sind während Ihres Aufenthalts
+          jederzeit für Sie da. 25 Gäste haben uns bisher mit 4,98 Sternen
+          bewertet. Besonders oft loben sie die Sauberkeit, die Ruhe und die
+          persönliche Betreuung, und darüber freuen wir uns sehr.
+        </p>
+        <p>
+          Die Buchung ist unkompliziert: 20 % Anzahlung, der Rest vier Wochen
+          vor Anreise. Unsere Stornobedingungen sind fair gestaffelt, eine
+          Reiserücktrittsversicherung empfehlen wir trotzdem. Wir freuen uns
+          darauf, Sie bald bei uns an der Nordsee zu begrüßen!
         </p>
       </div>
     </div>

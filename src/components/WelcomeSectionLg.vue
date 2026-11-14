@@ -30,10 +30,11 @@
       </figcaption>
     </figure>
 
-    <!-- Eckdaten, alle aus dem Text weiter unten -->
+    <!-- Eckdaten, alle aus dem Text weiter unten. So viele Spalten, wie
+         nebeneinander passen (je mindestens 10,5rem) – nie überlappend. -->
     <ul
       v-reveal
-      class="mx-auto mt-10 grid w-fit grid-cols-2 gap-x-10 gap-y-5 min-[1500px]:grid-cols-3"
+      class="mx-auto mt-10 grid w-full max-w-[44rem] grid-cols-[repeat(auto-fit,minmax(10.5rem,1fr))] gap-x-6 gap-y-5"
     >
       <li
         v-for="fakt in fakten"
@@ -45,7 +46,7 @@
         >
           <Icon :icon="fakt.icon" width="1.5rem" class="text-green-800" />
         </span>
-        <span class="whitespace-nowrap leading-snug text-[#405D72]">
+        <span class="min-w-0 leading-snug text-[#405D72]">
           <strong class="block font-bold text-[#1B3C53]">{{ fakt.wert }}</strong>
           {{ fakt.text }}
         </span>

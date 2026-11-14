@@ -26,7 +26,7 @@
       <p
         class="mt-8 w-full border-t border-[#F9F3EF]/20 pt-6 text-sm text-[#F9F3EF]/75"
       >
-        © {{ jahr }} Detlef und Susanne Struve · Tetenbüll, Halbinsel
+        © {{ jahr }} Detlef Struve · Tetenbüll, Halbinsel
         Eiderstedt
       </p>
     </div>
