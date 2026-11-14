@@ -16,24 +16,6 @@
         Alleinlage – ideal für einen entspannten, nachhaltigen Urlaub. Es liegt nur 2,5 km
         von einer idyllischen Badestelle entfernt.
       </p>
-      <a 
-:href="`https://www.traum-ferienwohnungen.de/${listingId}/#kalender`"
-target="_blank"
-rel="noopener noreferrer"
-class="flex items-center justify-center m-10 bg-[#dff9ff] border-4 border-[#D2C1B6] rounded"
->
-<Icon icon="material-symbols:subdirectory-arrow-right" class="mr-2 text-gray-600" width="32" />
-<img 
-src="https://static.traum-ferienwohnungen.de/images/vermieten/tfw-logo.png"
-alt="Traum-Ferienwohnungen.de"
-width="200"
-class="px-4 py-2 mt-1.5 "
-/>
-</a>
     </figure>
   </section>
 </template>
-
-<script setup>
-import { Icon } from "@iconify/vue";
-</script>
