@@ -35,3 +35,6 @@ coverage
 # Mock-ONLYOFFICE
 mock/.office-jwt-secret
 mock/Belegung.xlsx.tmp
+
+# Screenshots/Snapshots der Browser-Werkzeuge
+.playwright-mcp/

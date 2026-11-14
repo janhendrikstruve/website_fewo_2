@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col justify-center h-screen bg-[#FFF1D5]">
+  <section class="flex flex-col justify-center min-h-screen bg-[#FFF1D5]">
     <div class="grid grid-cols-5 items-center relative">
       <h2
         class="text-center text-5xl text-[#456882] sm:text-6xl font-berk col-start-3"

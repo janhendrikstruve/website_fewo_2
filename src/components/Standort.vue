@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col justify-center h-screen lg:bg-[#FFF1D5]">
+  <section class="flex flex-col justify-center min-h-screen lg:bg-[#FFF1D5]">
     <h2 class="text-center text-6xl text-[#456882] font-berk">
       Hier findest <br />
       du uns
