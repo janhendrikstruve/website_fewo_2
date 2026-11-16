@@ -7,7 +7,16 @@
         :class="{ 'lg:shadow-lg lg:shadow-[#1B3C53]/20': gescrollt }"
         aria-label="Hauptmenü"
       >
-        <div class="hidden lg:block lg:flex-1"></div>
+        <!-- Name als Logo, führt nach ganz oben -->
+        <div class="hidden lg:flex lg:flex-1">
+          <a
+            href="#"
+            class="flex items-center gap-2 rounded text-[#F9F3EF] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F9F3EF]"
+          >
+            <Moewen class="h-7 w-7 text-[#E8B4A0]" />
+            <span class="font-heading text-2xl">Opa Hans</span>
+          </a>
+        </div>
 
         <button
           type="button"
@@ -18,9 +27,9 @@
           <Bars3Icon class="h-8 w-8" aria-hidden="true" />
         </button>
 
-        <div class="hidden lg:flex lg:gap-x-8 xl:gap-x-12">
+        <div class="hidden lg:flex lg:gap-x-7 xl:gap-x-10">
           <a
-            v-for="item in navigation"
+            v-for="item in desktopNavigation"
             :key="item.name"
             :href="item.href"
             class="nav-link font-heading text-xl leading-6 text-[#F9F3EF] xl:text-2xl"
@@ -29,7 +38,13 @@
             >{{ item.name }}</a
           >
         </div>
-        <div class="hidden lg:block lg:flex-1"></div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a
+            href="#verfuegbarkeit"
+            class="rounded-full bg-[#E8B4A0] px-5 py-2 font-bold text-[#1B3C53] shadow-md shadow-[#1B3C53]/20 transition hover:-translate-y-0.5 hover:bg-[#F9F3EF] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F9F3EF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#456882]"
+            >Jetzt anfragen</a
+          >
+        </div>
       </nav>
 
       <!-- Handy-Menü: schiebt sich von rechts herein -->
@@ -208,6 +223,9 @@ const navigation = [
   { name: "Standort", href: "#standort" },
   { name: "Kontakt + Impressum", href: "#kontakt" },
 ];
+// Desktop-Leiste: Kontakt + Impressum steht im Footer, rechts sitzt
+// stattdessen der Anfrage-Knopf.
+const desktopNavigation = navigation.slice(0, -1);
 
 const mobileMenuOpen = ref(false);
 
@@ -317,4 +335,5 @@ onBeforeUnmount(() => {
 .nav-link:focus-visible {
   box-shadow: 0 0 0 2px #f9f3ef;
 }
+
 </style>
