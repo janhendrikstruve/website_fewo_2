@@ -17,44 +17,25 @@
       img-class="map-fade mt-6"
     />
 
-    <div class="mx-4 mt-4 flex items-center justify-center">
-      <Icon
-        icon="material-symbols:location-on-rounded"
-        width="3rem"
-        class="text-green-800"
-      />
-      <p class="mx-4 text-left text-2xl leading-snug text-[#405D72]">
-        Klosterweg 2a, <br />
-        25882 Tetenbüll
+    <!-- Adresse als Postkarte, Route per P.S. in der Karten-App öffnen -->
+    <div class="postkarte relative mx-4 mt-4 rounded-sm border border-[#D2C1B6] bg-[#F9F3EF] px-6 pb-5 pt-6 shadow-md shadow-[#1B3C53]/10">
+      <div class="absolute right-4 top-4 flex h-14 w-12 rotate-[4deg] items-center justify-center border-2 border-dashed border-[#E8B4A0] bg-white text-[#456882]" aria-hidden="true">
+        <Icon icon="material-symbols:location-on-rounded" width="1.75rem" />
+      </div>
+      <p class="font-heading text-2xl text-[#456882]">Ferienhaus Opa Hans</p>
+      <address class="mt-3 space-y-1 text-lg not-italic text-[#1B3C53]">
+        <p class="border-b border-dotted border-[#D2C1B6] pb-1">Klosterweg 2a</p>
+        <p class="border-b border-dotted border-[#D2C1B6] pb-1">25882 Tetenbüll</p>
+      </address>
+      <p class="mt-5 text-lg text-[#405D72]">
+        <span class="font-heading text-xl text-[#456882]">P.S.</span>
+        Route planen mit
+        <a :href="googleMapsUrl" target="_blank" rel="noopener noreferrer" class="karten-link">
+          <Icon icon="logos:google-maps" width="0.85rem" /> Google Maps</a>
+        oder
+        <a :href="appleMapsUrl" target="_blank" rel="noopener noreferrer" class="karten-link">
+          <Icon icon="lineicons:apple-brand" width="1.05rem" class="-mt-0.5" /> Apple Karten</a>
       </p>
-    </div>
-
-    <!-- Route in der Karten-App öffnen -->
-    <div class="flex justify-center gap-4 pt-8">
-      <a
-        :href="googleMapsUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="In Google Maps öffnen"
-        title="In Google Maps öffnen"
-        class="karten-knopf flex justify-center items-center w-[7em] h-[7em] bg-[#F9F3EF] border-2 border-[#D2C1B6] rounded-full"
-      >
-        <Icon icon="logos:google-maps" width="3rem" class="" />
-      </a>
-      <a
-        :href="appleMapsUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="In Apple Karten öffnen"
-        title="In Apple Karten öffnen"
-        class="karten-knopf flex justify-center items-center w-[7em] h-[7em] bg-[#F9F3EF] border-2 border-[#D2C1B6] rounded-full relative"
-      >
-        <Icon
-          icon="lineicons:apple-brand"
-          width="4rem"
-          class="text-[#1B3C53] absolute top-[1.125rem]"
-        />
-      </a>
     </div>
   </section>
 </template>
@@ -70,21 +51,29 @@ const appleMapsUrl = `https://maps.apple.com/?q=${adresse}`;
 </script>
 
 <style scoped>
-.karten-knopf {
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background-color 0.2s ease;
+/* Postkarte liegt leicht schräg */
+.postkarte {
+  rotate: -1deg;
 }
-.karten-knopf:hover,
-.karten-knopf:focus-visible {
-  transform: translateY(-0.2rem);
-  background-color: #fff8f3;
-  box-shadow: 0 0.6rem 1.2rem rgba(27, 60, 83, 0.15);
+
+.karten-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 700;
+  color: #456882;
+  white-space: nowrap;
+  border-bottom: 2px solid #e8b4a0;
+  transition: border-color 0.2s ease;
+}
+.karten-link:hover,
+.karten-link:focus-visible {
+  border-color: #456882;
   outline: none;
 }
-.karten-knopf:focus-visible {
-  border-color: #456882;
+.karten-link:focus-visible {
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #456882;
 }
 
 /* Blendet oberen und unteren Bildrand weich ins Transparente aus,
