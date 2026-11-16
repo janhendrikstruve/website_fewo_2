@@ -4,8 +4,15 @@ import '@fontsource/lato/latin-700.css'
 import './assets/style.css'
 
 import { createApp } from 'vue'
+import { _api, addIcon } from '@iconify/vue'
+import icons from 'virtual:icons'
 import App from './App.vue'
 import router from './router'
+
+// Alle verwendeten Icons sind im Bundle – kein Abruf von api.iconify.design.
+for (const [name, daten] of Object.entries(icons)) addIcon(name, daten)
+// Fehlt eins, bleibt es leer, statt doch extern nachgeladen zu werden.
+_api.setFetch(() => Promise.reject(new Error('Icon-API deaktiviert')))
 
 const app = createApp(App)
 

@@ -1,5 +1,8 @@
 import { fileURLToPath, URL } from "node:url";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
+import { createRequire } from "node:module";
+import { getIconData } from "@iconify/utils";
 
 import { defineConfig, loadEnv, type Plugin } from "vite";
 import vue from "@vitejs/plugin-vue";
@@ -32,7 +35,12 @@ export default defineConfig(({ mode }) => {
   // derselbe Pfad ebenfalls auf die Freigabe zeigen.
   // Ohne BELEGUNG_QUELLE liefert der Dev-Server stattdessen mock/Belegung.xlsx.
   const proxy: Record<string, object> = {};
-  const plugins = [vue(), vueJsx(), imagetools({ defaultDirectives: bildVarianten })];
+  const plugins = [
+    vue(),
+    vueJsx(),
+    imagetools({ defaultDirectives: bildVarianten }),
+    lokaleIcons(),
+  ];
   if (env.BELEGUNG_QUELLE) {
     const quelle = new URL(env.BELEGUNG_QUELLE);
     proxy["/belegung-quelle"] = {
@@ -73,6 +81,47 @@ function mockBelegung(): Plugin {
         res.setHeader("cache-control", "no-store");
         res.end(readFileSync(datei));
       });
+    },
+  };
+}
+
+// Icons lokal statt von api.iconify.design (schneller, kein Ausfallrisiko,
+// keine IP-Übertragung an Dritte – DSGVO). Durchsucht src/ nach Namen wie
+// "material-symbols:home-rounded" und stellt genau diese Icons als
+// `virtual:icons` bereit; src/main.ts registriert sie vor dem Start.
+// Neues Icon-Set? `npm i -D @iconify-json/<prefix>` und unten eintragen.
+const ICON_SETS = ["material-symbols", "logos", "lineicons"];
+
+function lokaleIcons(): Plugin {
+  const id = "virtual:icons";
+  const require = createRequire(import.meta.url);
+  const src = fileURLToPath(new URL("./src", import.meta.url));
+  const muster = new RegExp(`["'\`](${ICON_SETS.join("|")}):([a-z0-9-]+)["'\`]`, "g");
+
+  function dateien(dir: string): string[] {
+    return readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
+      const pfad = join(dir, e.name);
+      if (e.isDirectory()) return dateien(pfad);
+      return /\.(vue|ts|js)$/.test(e.name) ? [pfad] : [];
+    });
+  }
+
+  return {
+    name: "lokale-icons",
+    resolveId: (i) => (i === id ? "\0" + id : undefined),
+    load(i) {
+      if (i !== "\0" + id) return;
+      const icons: Record<string, object> = {};
+      for (const datei of dateien(src)) {
+        this.addWatchFile(datei);
+        for (const [, prefix, name] of readFileSync(datei, "utf8").matchAll(muster)) {
+          const set = require(`@iconify-json/${prefix}/icons.json`);
+          const daten = getIconData(set, name);
+          if (!daten) this.warn(`Icon nicht gefunden: ${prefix}:${name}`);
+          else icons[`${prefix}:${name}`] = { width: set.width, height: set.height, ...daten };
+        }
+      }
+      return `export default ${JSON.stringify(icons)};`;
     },
   };
 }
