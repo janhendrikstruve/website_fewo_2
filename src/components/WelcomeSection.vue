@@ -4,7 +4,7 @@
     <header v-reveal class="text-center">
       <p class="eyebrow">Nordsee · Halbinsel Eiderstedt</p>
       <h1
-        class="mt-3 text-balance text-5xl leading-tight text-[#456882] font-berk xl:text-6xl"
+        class="mt-3 text-balance text-5xl leading-tight text-[#456882] font-heading xl:text-6xl"
       >
         Ferienhaus Opa Hans
       </h1>

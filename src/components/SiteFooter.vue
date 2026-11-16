@@ -5,7 +5,7 @@
       class="mx-auto flex max-w-5xl flex-col items-center px-8 pb-8 pt-12 text-center"
     >
       <Moewen class="h-8 w-8 text-[#F9F3EF]/70" />
-      <p class="mt-3 text-4xl font-berk">Ferienhaus Opa Hans</p>
+      <p class="mt-3 text-4xl font-heading">Ferienhaus Opa Hans</p>
       <p class="mt-3 text-balance italic text-[#F9F3EF]/85">
         Fernab von allem Trubel fängt der Urlaub schon an der Gartenpforte an.
       </p>

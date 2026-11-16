@@ -14,7 +14,7 @@ html {
 }
 
 /* Fließtext: Lato, lokal ausgeliefert – sieht damit auf jedem Gerät gleich
-   aus. Überschriften bleiben Berkshire Swash (Klasse font-berk). */
+   aus. Überschriften: Berkshire Swash (Klasse font-heading). */
 body {
   font-family: "Lato", ui-sans-serif, system-ui, sans-serif;
   color: #405d72;
@@ -52,4 +52,11 @@ body {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #456882;
+}
+
+/* Überschriften-Schrift (lokal ausgeliefert, siehe App.vue) */
+@layer utilities {
+  .font-heading {
+    font-family: "Berkshire Swash", cursive;
+  }
 }

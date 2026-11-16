@@ -2,7 +2,7 @@
   <section class="flex flex-col px-4 pb-20 pt-14">
     <p class="eyebrow text-center">Kontakt</p>
     <h2
-      class="mt-3 text-center text-5xl text-[#456882] font-berk xl:text-6xl"
+      class="mt-3 text-center text-5xl text-[#456882] font-heading xl:text-6xl"
     >
       Impressum
     </h2>
@@ -17,7 +17,7 @@
 
       <!-- Anbieter -->
       <address class="mt-5 not-italic text-center">
-        <p class="text-3xl leading-tight text-[#456882] font-berk">
+        <p class="text-3xl leading-tight text-[#456882] font-heading">
           Detlef Struve
         </p>
         <p class="mt-3 text-[1.15rem] tracking-tight">

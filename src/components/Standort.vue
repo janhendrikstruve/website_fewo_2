@@ -4,7 +4,7 @@
   >
     <p class="eyebrow text-center">Anfahrt</p>
     <h2
-      class="mt-3 text-center text-5xl text-[#456882] font-berk xl:text-6xl"
+      class="mt-3 text-center text-5xl text-[#456882] font-heading xl:text-6xl"
     >
       Hier findest <br />
       du uns

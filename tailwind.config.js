@@ -12,7 +12,6 @@ export default {
         // Optional: Weitere Fonts hinzufügen
         inter: ["Inter", "sans-serif"],
         quin: ["Quintessential", "cursive"],
-        berk: ["Berkshire Swash", "cursive"],
       },
     },
   },

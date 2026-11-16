@@ -19,7 +19,7 @@
 
       <header v-reveal class="pb-8 pt-6 text-center">
         <p class="eyebrow">Ihre Gastgeber</p>
-        <h2 class="mt-3 text-6xl text-[#456882] font-berk">Moin!</h2>
+        <h2 class="mt-3 text-6xl text-[#456882] font-heading">Moin!</h2>
       </header>
 
       <!-- Handy: kurze Fassung -->

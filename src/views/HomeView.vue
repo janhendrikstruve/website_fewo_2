@@ -23,7 +23,7 @@
             v-for="item in navigation"
             :key="item.name"
             :href="item.href"
-            class="nav-link font-berk text-xl leading-6 text-[#F9F3EF] xl:text-2xl"
+            class="nav-link font-heading text-xl leading-6 text-[#F9F3EF] xl:text-2xl"
             :class="{ 'is-active': item.href === aktiv }"
             :aria-current="item.href === aktiv ? 'true' : undefined"
             >{{ item.name }}</a
@@ -63,7 +63,7 @@
               class="fixed inset-y-0 right-0 flex w-full max-w-sm flex-col overflow-y-auto bg-[#456882] px-6 pb-8 pt-3 text-[#F9F3EF] shadow-2xl"
             >
               <div class="flex h-11 items-center justify-between">
-                <DialogTitle class="font-berk text-2xl">Opa Hans</DialogTitle>
+                <DialogTitle class="font-heading text-2xl">Opa Hans</DialogTitle>
                 <button
                   type="button"
                   class="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F9F3EF]"
@@ -78,7 +78,7 @@
                 <li v-for="item in navigation" :key="item.name">
                   <a
                     :href="item.href"
-                    class="flex items-center justify-between rounded py-4 font-berk text-3xl transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F9F3EF]"
+                    class="flex items-center justify-between rounded py-4 font-heading text-3xl transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F9F3EF]"
                     :class="item.href === aktiv ? 'text-white' : 'text-[#F9F3EF]/80'"
                     :aria-current="item.href === aktiv ? 'true' : undefined"
                     @click.prevent="geheZu(item.href)"

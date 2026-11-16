@@ -5,7 +5,7 @@
   >
     <p class="eyebrow text-center">Belegung</p>
     <h2
-      class="mb-10 mt-3 text-center text-5xl text-[#456882] font-berk xl:text-6xl"
+      class="mb-10 mt-3 text-center text-5xl text-[#456882] font-heading xl:text-6xl"
     >
       Verfügbarkeit
     </h2>

@@ -4,7 +4,7 @@
     <p v-reveal class="eyebrow text-center">Eindrücke</p>
 
     <div v-reveal class="mx-auto mt-3 max-w-md">
-      <h2 class="text-center text-5xl text-[#456882] font-berk">Drinnen</h2>
+      <h2 class="text-center text-5xl text-[#456882] font-heading">Drinnen</h2>
       <ImageSlider
         class="mt-6"
         :images="innenImages"
@@ -14,7 +14,7 @@
     </div>
 
     <div v-reveal class="mx-auto mt-12 max-w-md">
-      <h2 class="text-center text-5xl text-[#456882] font-berk">Draußen</h2>
+      <h2 class="text-center text-5xl text-[#456882] font-heading">Draußen</h2>
       <ImageSlider
         class="mt-6"
         :images="aussenImages"

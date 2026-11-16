@@ -12,7 +12,7 @@
     "mock:office": "node mock/office-server.mjs"
   },
   "dependencies": {
-    "@fontsource/berkshire-swash": "^5.2.8",
+    "@fontsource/berkshire-swash": "^5.3.0",
     "@fontsource/lato": "5.3.0",
     "@fontsource/quintessential": "^5.2.8",
     "@headlessui/vue": "^1.7.23",
